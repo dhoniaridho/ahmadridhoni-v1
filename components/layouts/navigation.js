@@ -68,14 +68,14 @@ export default function Navigation() {
                     <p className="text-sm text-white text-center whitespace-nowrap">&copy;{new Date().getFullYear()} dhoniaridho. All Rights Reserved</p>
                 </div>
             </div>
-            <div className={`z-50 transform transition-all duration-300 ${isCollapse ? 'translate-x-0' : 'translate-x-full delay-300'} fixed flex justify-between flex-col top-0 right-0 w-1/4 h-screen bg-gradient-to-br from-pink-400 via-blue-400 to-indigo-400`}>
+            <div className={`z-50 transform transition-all duration-300 ${isCollapse ? 'translate-x-0' : 'translate-x-full delay-300'} fixed flex justify-between flex-col top-0 right-0 w-1/4 h-screen bg-gradient-to-br from-pink-600 via-blue-800 to-indigo-900`}>
                 <div className="h-16 flex justify-end place-items-center px-5">
                     <button className={`p-1 bg-black  text-white rounded-full transform transition-all ${isCollapse ? 'scale-100' : 'scale-0'}`} onClick={handleClose}>
                         <HiOutlineX size="30px" />
                     </button>
                 </div>
                 <div className="flex justify-center place-items-center flex-1">
-                <ul className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <ul className="grid grid-cols-1 md:grid-cols-3 gap-5 text-white">
                         <li className="col-span-3">
                             <h1 className="text-lg font-medium uppercase tracking-widest text-white">Social</h1>
                             <div className="border-4 -mt-3 w-1/2 border-pink-600"></div>
@@ -105,7 +105,7 @@ export default function Navigation() {
                                 <HiMail size="30px" />
                             </a>
                         </li>
-                        <li className="col-span-3 text-white font-semibold text-xl hover:text-gray-800">
+                        <li className="col-span-3 text-white font-semibold text-xl hover:text-gray-300">
                             <a href="http://dhoniaridho.vercel.app" target="_blank" rel="noopener noreferrer">
                             <p className="flex place-items-center hover:translate-x-2 transform transition-transform">Resume<div className="ml-2"><HiArrowRight /></div> </p>
                             </a>

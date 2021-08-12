@@ -1,3 +1,4 @@
+import Footer from "./footer";
 import Navigation from "./navigation";
 
 export default function MainLayout(props) {
@@ -6,6 +7,7 @@ export default function MainLayout(props) {
         <>
            <Navigation />
            {children} 
+           <Footer />
         </>
     )
 }
