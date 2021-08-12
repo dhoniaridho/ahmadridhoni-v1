@@ -16,7 +16,7 @@ export default function Home() {
             </div>
             <p className="uppercase text-pink-400">Web Developer</p>
             <p className="text-sm mt-2 text-gray-300">
-              I'am full stack web developer, basic skills PHP, Javascript.{" "}
+              I&apos;am full stack web developer, basic skills PHP, Javascript.{" "}
               <br /> based in Yogyakarta, Indonesia.
             </p>
             <div className="mt-7">
@@ -29,7 +29,7 @@ export default function Home() {
           </div>
         </div>
         <div className="w-1/2 flex justify-center place-items-center">
-          <img className="w-1/2" src={Cube.src} />
+          <img className="w-1/2" src={Cube.src} alt="cube" />
         </div>
       </div>
     </MainLayout>
