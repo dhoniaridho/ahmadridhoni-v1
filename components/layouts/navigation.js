@@ -68,7 +68,7 @@ export default function Navigation() {
                     <p className="text-sm text-white text-center whitespace-nowrap">&copy;{new Date().getFullYear()} dhoniaridho. All Rights Reserved</p>
                 </div>
             </div>
-            <div className={`z-50 transform transition-all duration-300 ${isCollapse ? 'translate-x-0' : 'translate-x-full delay-300'} fixed flex justify-between flex-col top-0 right-0 w-1/4 h-screen bg-pink-500`}>
+            <div className={`z-50 transform transition-all duration-300 ${isCollapse ? 'translate-x-0' : 'translate-x-full delay-300'} fixed flex justify-between flex-col top-0 right-0 w-1/4 h-screen bg-gradient-to-br from-pink-400 via-blue-400 to-indigo-400`}>
                 <div className="h-16 flex justify-end place-items-center px-5">
                     <button className={`p-1 bg-black  text-white rounded-full transform transition-all ${isCollapse ? 'scale-100' : 'scale-0'}`} onClick={handleClose}>
                         <HiOutlineX size="30px" />
@@ -78,30 +78,30 @@ export default function Navigation() {
                 <ul className="grid grid-cols-1 md:grid-cols-3 gap-5">
                         <li className="col-span-3">
                             <h1 className="text-lg font-medium uppercase tracking-widest text-white">Social</h1>
-                            <div className="border-4 -mt-4 w-1/2 border-indigo-600"></div>
+                            <div className="border-4 -mt-3 w-1/2 border-pink-600"></div>
                         </li>
                         <li>
-                            <a href="http://facebook.com/dhoniaridho" target="_blank" rel="noopener noreferrer">
+                            <a className="hover:text-white" href="http://facebook.com/dhoniaridho" target="_blank" rel="noopener noreferrer">
                                 <FaFacebook size="30px" />
                             </a>
                         </li>
                         <li>
-                            <a href="http://instagram.com/dhoniaridho" target="_blank" rel="noopener noreferrer">
+                            <a className="hover:text-white" href="http://instagram.com/dhoniaridho" target="_blank" rel="noopener noreferrer">
                                 <FaInstagram size="30px" />
                             </a>
                         </li>
                         <li>
-                            <a href="http://www.linkedin.com/in/ahmad-ridhoni-921a6b205" target="_blank" rel="noopener noreferrer">
+                            <a className="hover:text-white" href="http://www.linkedin.com/in/ahmad-ridhoni-921a6b205" target="_blank" rel="noopener noreferrer">
                                 <FaLinkedin size="30px" />
                             </a>
                         </li>
                         <li>
-                            <a href="http://github.com/dhoniaridho" target="_blank" rel="noopener noreferrer">
+                            <a className="hover:text-white" href="http://github.com/dhoniaridho" target="_blank" rel="noopener noreferrer">
                                 <FaGithub size="30px" />
                             </a>
                         </li>
                         <li className="col-span-2">
-                            <a href="mailto:dhoniaridho@gmail.com">
+                            <a className="hover:text-white" href="mailto:dhoniaridho@gmail.com">
                                 <HiMail size="30px" />
                             </a>
                         </li>
