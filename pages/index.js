@@ -104,16 +104,24 @@ export default function Home() {
         <div className="grid md:grid-cols-3 gap-5">
           {projects.map((p, i) => {
             return (
-                <div role="button" key={i} className="flex justify-between flex-col h-80 hover:bg-gradient-to-tr hover:border-0 border from-pink-500 to-blue-500 p-5">
-                  <div className="flex-1 flex place-items-center">
-                    <div className="mt-24">
-                      <h1 className="text-4xl font-semibold">{p.name}</h1>
-                    </div>
-                  </div>
-                  <div className="flex justify-center uppercase">
-                    {p.tech.map((t, idx)=><p key={idx} className="mx-1 text-sm">{t}</p>)}
+              <div
+                role="button"
+                key={i}
+                className="flex justify-between flex-col h-80 hover:bg-gradient-to-tr hover:border-0 border from-pink-500 to-blue-500 p-5"
+              >
+                <div className="flex-1 flex place-items-center">
+                  <div className="mt-24">
+                    <h1 className="text-4xl font-semibold">{p.name}</h1>
                   </div>
                 </div>
+                <div className="flex justify-center uppercase">
+                  {p.tech.map((t, idx) => (
+                    <p key={idx} className="mx-1 text-sm">
+                      {t}
+                    </p>
+                  ))}
+                </div>
+              </div>
             );
           })}
         </div>
@@ -128,7 +136,7 @@ export default function Home() {
               <p className="text-sm text-gray-400 mb-2 uppercase">
                 Say hello world to me
               </p>
-              <h1 className="text-4xl">CONTACT ME 🤙</h1>
+              <h1 className="text-3xl md:text-4xl whitespace-nowrap">CONTACT ME 🤙</h1>
               <div className="bg-pink-500 w-40 h-4 -mt-4"></div>
             </div>
             <div>

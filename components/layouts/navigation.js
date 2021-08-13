@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { HiMenuAlt3, HiOutlineX, HiMail, HiMenuAlt4, HiArrowRight } from 'react-icons/hi'
+import { HiOutlineX, HiMail, HiMenuAlt3, HiArrowRight } from 'react-icons/hi'
 import { FaFacebook, FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa'
 import Link from 'next/link'
 import {useRouter} from 'next/router'
@@ -43,11 +43,11 @@ export default function Navigation() {
                 </div>
                 <div>
                     <button onClick={handleCollapse}>
-                        <HiMenuAlt4 size="30px" />
+                        <HiMenuAlt3 size="30px" />
                     </button>
                 </div>
             </div>
-            <div className={`fixed z-50 text-white bg-gray-800 flex justify-between flex-col transition-all ease-out duration-300 ${isCollapse ? 'w-full md:w-3/4' : 'delay-300 w-0'} top-0 left-0 overflow-hidden h-screen bg-black`}>
+            <div className={`fixed z-50 text-white bg-gray-900 flex justify-between flex-col transition-all ease-out duration-300 ${isCollapse ? 'w-full md:w-3/4' : 'delay-300 w-0'} top-0 left-0 overflow-hidden h-screen bg-black`}>
             <div className="h-16 flex justify-between place-items-center px-5">
                     <Logo />
                     <button className={`p-1 sm:hidden bg-black  text-white rounded-full transform transition-all ${isCollapse ? 'scale-100' : 'scale-0'}`} onClick={handleClose}>
