@@ -6,6 +6,8 @@ import Box from "../assets/images/box.png";
 import { useForm } from "react-hook-form";
 import Alert from "~/components/ui/alert";
 import { useEffect } from "react/cjs/react.production.min";
+import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { HiMail } from "react-icons/hi";
 
 export default function Home() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -136,7 +138,9 @@ export default function Home() {
               <p className="text-sm text-gray-400 mb-2 uppercase">
                 Say hello world to me
               </p>
-              <h1 className="text-3xl md:text-4xl whitespace-nowrap">CONTACT ME 🤙</h1>
+              <h1 className="text-3xl md:text-4xl whitespace-nowrap">
+                CONTACT ME 🤙
+              </h1>
               <div className="bg-pink-500 w-40 h-4 -mt-4"></div>
             </div>
             <div>
@@ -217,6 +221,59 @@ export default function Home() {
               </form>
             </div>
           </div>
+        </div>
+      </section>
+      <section className="bg-black text-white px-5 md:px-20 py-16">
+        <div>
+          <p className="text-sm text-gray-400 mb-2 uppercase">
+            Consult your problems
+          </p>
+          <h1 className="text-3xl md:text-4xl whitespace-nowrap">
+            YOU CAN ALSO 🤙
+          </h1>
+          <div className="bg-pink-500 w-40 h-4 -mt-4"></div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 mt-10 gap-5">
+          <a href="http://github.com/dhoniaridho" target="_blank" rel="noopener noreferrer" className="group relative h-16 inline-flex w-full border border-white focus:outline-none">
+            <div className="absolute inset-0 p-1 flex justify-between flex-col self-stretch text-white text-center hover:bg-pink-600 hover:ring-pink-600 ring-offset-pink-600 bg-gray-900 ring-1 ring-black transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1">
+              <div className="flex justify-end">
+                <FaGithub size="20px" />
+              </div>
+              <div className="flex justify-start">Github</div>
+            </div>
+          </a>
+          <a href="http://instagram.com/dhoniaridho" target="_blank" rel="noopener noreferrer" className="group relative h-16 inline-flex w-full border border-white focus:outline-none">
+            <div className="absolute inset-0 p-1 flex justify-between flex-col self-stretch text-white text-center hover:bg-pink-600 hover:ring-pink-600 ring-offset-pink-600 bg-gray-900 ring-1 ring-black transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1">
+              <div className="flex justify-end">
+                <FaInstagram size="20px" />
+              </div>
+              <div className="flex justify-start">Instagram</div>
+            </div>
+          </a>
+          <a href="http://facebook.com/dhoniaridho" target="_blank" rel="noopener noreferrer" className="group relative h-16 inline-flex w-full border border-white focus:outline-none">
+            <div className="absolute inset-0 p-1 flex justify-between flex-col self-stretch text-white text-center hover:bg-pink-600 hover:ring-pink-600 bg-gray-900 ring-1 ring-black transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1">
+              <div className="flex justify-end">
+                <FaFacebook size="20px" />
+              </div>
+              <div className="flex justify-start">Facebook</div>
+            </div>
+          </a>
+          <a href="http://www.linkedin.com/in/ahmad-ridhoni-921a6b205" target="_blank" rel="noopener noreferrer" className="group relative h-16 inline-flex w-full border border-white focus:outline-none">
+            <div className="absolute inset-0 p-1 flex justify-between flex-col self-stretch text-white text-center hover:bg-pink-600 hover:ring-pink-600 bg-gray-900 ring-1 ring-black transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1">
+              <div className="flex justify-end">
+                <FaLinkedin size="20px" />
+              </div>
+              <div className="flex justify-start">LinkedIn</div>
+            </div>
+          </a>
+          <a href="mailto:dhoniaridho@gmail.com" className="group relative h-16 inline-flex w-full border border-white focus:outline-none">
+            <div className="absolute inset-0 p-1 flex justify-between flex-col self-stretch text-white text-center hover:bg-pink-600 hover:ring-pink-600 bg-gray-900 ring-1 ring-black transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1">
+              <div className="flex justify-end">
+                <HiMail size="20px" />
+              </div>
+              <div className="flex justify-start">dhoniaridho@gmail.com</div>
+            </div>
+          </a>
         </div>
       </section>
     </MainLayout>
