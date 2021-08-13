@@ -25,7 +25,7 @@ export default function Home() {
 
   return (
     <MainLayout>
-      <section className="bg-black place-items-center text-white h-screen--h-16 flex flex-col md:flex-row place-content-center md:justify-around">
+      <section className="bg-black place-items-center text-white h-screen--h-16 flex flex-col md:flex-row place-content-center md:justify-around px-5">
         <div className="order-2 md:order-1 md:flex place-items-center flex-col">
           <div className="md:-mt-16">
             <div className="mt-4">

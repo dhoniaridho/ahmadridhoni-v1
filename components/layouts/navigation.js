@@ -47,15 +47,15 @@ export default function Navigation() {
                     </button>
                 </div>
             </div>
-            <div className={`fixed z-50 text-white flex justify-between flex-col transition-all ease-out duration-300 ${isCollapse ? 'w-3/4' : 'delay-300 w-0'} top-0 left-0 overflow-hidden h-screen bg-black`}>
+            <div className={`fixed z-50 text-white flex justify-between flex-col transition-all ease-out duration-300 ${isCollapse ? 'w-full md:w-3/4' : 'delay-300 w-0'} top-0 left-0 overflow-hidden h-screen bg-black`}>
             <div className="h-16 flex justify-start place-items-center px-5">
                     <Logo />
                 </div>
-                <div className="overflow-hidden flex w-full place-items-center justify-start">
-                    <ul className="text-white ml-28">
+                <div className="overflow-hidden flex w-full place-items-center justify-center md:justify-start">
+                    <ul className="text-white md:ml-28">
                         {navigations.map((n, i)=> {
                             return(
-                                <li className={`text-6xl overflow-hidden transform transition-all ${isCollapse ? 'opacity-100 translate-y-0 duration-700' : 'opacity-0 translate-y-full'}`} key={i}>
+                                <li className={`text-6xl text-center md:text-left overflow-hidden transform transition-all ${isCollapse ? 'opacity-100 translate-y-0 duration-700' : 'opacity-0 translate-y-full'}`} key={i}>
                                     <Link href={n.href}>
                                         <a onClick={handleClose} onMouseOver={()=>setIsNavHover({[i]: true})} onMouseOut={()=>setIsNavHover({[i]: false})}  className={`transition-all hover:text-pink-500 ${isNavHover[i] ? 'tracking-widest' : ''} ${asPath === n.href && 'text-pink-500'}`}>{n.name}</a>
                                     </Link>
@@ -68,13 +68,13 @@ export default function Navigation() {
                     <p className="text-sm text-white text-center whitespace-nowrap">&copy;{new Date().getFullYear()} dhoniaridho. All Rights Reserved</p>
                 </div>
             </div>
-            <div className={`z-50 transform transition-all duration-300 ${isCollapse ? 'translate-x-0' : 'translate-x-full delay-300'} fixed flex justify-between flex-col top-0 right-0 w-1/4 h-screen bg-gradient-to-br from-pink-600 via-blue-800 to-indigo-900`}>
+            <div className={`z-50 hidden md:flex transform transition-all duration-300 ${isCollapse ? 'translate-x-0' : 'translate-x-full delay-300'} fixed flex justify-between flex-col top-0 right-0 w-1/4 h-screen bg-gradient-to-br from-pink-600 via-blue-800 to-indigo-900`}>
                 <div className="h-16 flex justify-end place-items-center px-5">
                     <button className={`p-1 bg-black  text-white rounded-full transform transition-all ${isCollapse ? 'scale-100' : 'scale-0'}`} onClick={handleClose}>
                         <HiOutlineX size="30px" />
                     </button>
                 </div>
-                <div className="flex justify-center place-items-center flex-1">
+                <div className="flex justify-center place-items-center md:flex-1">
                 <ul className="grid grid-cols-1 md:grid-cols-3 gap-5 text-white">
                         <li className="col-span-3">
                             <h1 className="text-lg font-medium uppercase tracking-widest text-white">Social</h1>
