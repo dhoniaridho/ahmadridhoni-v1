@@ -7,13 +7,14 @@ import { useForm } from 'react-hook-form';
 export default function Home() {
 
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const { register, handleSubmit } = useForm()
+  const { register, handleSubmit, reset } = useForm()
   const onSubmit = async (data) => {
     setIsSubmitting(true)
     try {
       setTimeout(()=>{
-        setIsSubmitting(false)
         alert(JSON.stringify(data))
+        reset(data = '');
+        setIsSubmitting(false)
       }, 3000)
     } catch (error) {
       alert(error)
@@ -56,15 +57,15 @@ export default function Home() {
           <h1 className="text-4xl">Stuff I’ve Worked On 📁</h1>
         </div>
         <div className="grid grid-cols-3 gap-5">
-          <div className="animate-pulse h-80 bg-gradient-to-bl from-pink-500 to-blue-500"></div>
-          <div className="animate-pulse h-80 bg-gradient-to-bl from-pink-500 to-blue-500"></div>
-          <div className="animate-pulse h-80 bg-gradient-to-bl from-pink-500 to-blue-500"></div>
-          <div className="animate-pulse h-80 bg-gradient-to-bl from-pink-500 to-blue-500"></div>
-          <div className="animate-pulse h-80 bg-gradient-to-bl from-pink-500 to-blue-500"></div>
-          <div className="animate-pulse h-80 bg-gradient-to-bl from-pink-500 to-blue-500"></div>
-          <div className="animate-pulse h-80 bg-gradient-to-bl from-pink-500 to-blue-500"></div>
-          <div className="animate-pulse h-80 bg-gradient-to-bl from-pink-500 to-blue-500"></div>
-          <div className="animate-pulse h-80 bg-gradient-to-bl from-pink-500 to-blue-500"></div>
+          <div className="h-80 bg-gradient-to-bl from-pink-500 to-blue-500"></div>
+          <div className="h-80 bg-gradient-to-bl from-pink-500 to-blue-500"></div>
+          <div className="h-80 bg-gradient-to-bl from-pink-500 to-blue-500"></div>
+          <div className="h-80 bg-gradient-to-bl from-pink-500 to-blue-500"></div>
+          <div className="h-80 bg-gradient-to-bl from-pink-500 to-blue-500"></div>
+          <div className="h-80 bg-gradient-to-bl from-pink-500 to-blue-500"></div>
+          <div className="h-80 bg-gradient-to-bl from-pink-500 to-blue-500"></div>
+          <div className="h-80 bg-gradient-to-bl from-pink-500 to-blue-500"></div>
+          <div className="h-80 bg-gradient-to-bl from-pink-500 to-blue-500"></div>
         </div>
       </section>
       <section className="bg-black text-white px-20 py-16">
@@ -85,7 +86,7 @@ export default function Home() {
                 <fieldset className="mb-4">
                   <div className="flex flex-col my-3">
                     <label className="text-sm mb-2" htmlFor="name">
-                      Full Name
+                      Full Name *
                     </label>
                     <input
                       {...register("name")}
@@ -97,7 +98,7 @@ export default function Home() {
                   </div>
                   <div className="flex flex-col my-3">
                     <label className="text-sm mb-2" htmlFor="email">
-                      Email
+                      Email *
                     </label>
                     <input
                       {...register("email")}
@@ -109,10 +110,10 @@ export default function Home() {
                   </div>
                   <div className="flex flex-col my-3">
                     <label className="text-sm mb-2" htmlFor="phone">
-                      Phone Number
+                      Subject *
                     </label>
                     <input
-                      {...register("phone")}
+                      {...register("subject")}
                       type="text"
                       id="phone"
                       placeholder="Your Phone Number"
@@ -121,7 +122,7 @@ export default function Home() {
                   </div>
                   <div className="flex flex-col my-3">
                     <label className="text-sm mb-2" htmlFor="message">
-                      Message
+                      Message *
                     </label>
                     <textarea
                       {...register("message")}
@@ -131,6 +132,7 @@ export default function Home() {
                       className="py-2 text-black px-2 w-96 focus:outline-none"
                     ></textarea>
                   </div>
+                <p className="my-2 text-sm">We respect your privacy.</p>
                 </fieldset>
                 <button
                   className="group relative h-12 inline-flex w-64 border border-white sm:w-56 focus:outline-none"
