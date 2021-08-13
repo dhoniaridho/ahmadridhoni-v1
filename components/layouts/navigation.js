@@ -37,7 +37,7 @@ export default function Navigation() {
 
     return(
         <nav>
-            <div className="bg-black overflow-hidden px-5 text-white flex h-16 justify-between place-items-center">
+            <div className="overflow-hidden bg-black px-5 text-white flex h-16 justify-between place-items-center z-40 sticky">
                 <div>
                     <Logo />
                 </div>
@@ -47,9 +47,12 @@ export default function Navigation() {
                     </button>
                 </div>
             </div>
-            <div className={`fixed z-50 text-white flex justify-between flex-col transition-all ease-out duration-300 ${isCollapse ? 'w-full md:w-3/4' : 'delay-300 w-0'} top-0 left-0 overflow-hidden h-screen bg-black`}>
-            <div className="h-16 flex justify-start place-items-center px-5">
+            <div className={`fixed z-50 text-white bg-gray-800 flex justify-between flex-col transition-all ease-out duration-300 ${isCollapse ? 'w-full md:w-3/4' : 'delay-300 w-0'} top-0 left-0 overflow-hidden h-screen bg-black`}>
+            <div className="h-16 flex justify-between place-items-center px-5">
                     <Logo />
+                    <button className={`p-1 sm:hidden bg-black  text-white rounded-full transform transition-all ${isCollapse ? 'scale-100' : 'scale-0'}`} onClick={handleClose}>
+                        <HiOutlineX size="30px" />
+                    </button>
                 </div>
                 <div className="overflow-hidden flex w-full place-items-center justify-center md:justify-start">
                     <ul className="text-white md:ml-28">

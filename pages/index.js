@@ -5,9 +5,36 @@ import Cube from "../assets/images/cube.png";
 import Box from "../assets/images/box.png";
 import { useForm } from "react-hook-form";
 import Alert from "~/components/ui/alert";
+import { useEffect } from "react/cjs/react.production.min";
 
 export default function Home() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [projects, setProjects] = useState([
+    {
+      name: "Links",
+      tech: ["react", "tailwind"],
+    },
+    {
+      name: "Links",
+      tech: ["react", "tailwind"],
+    },
+    {
+      name: "Links",
+      tech: ["react", "tailwind"],
+    },
+    {
+      name: "Links",
+      tech: ["react", "tailwind"],
+    },
+    {
+      name: "Links",
+      tech: ["react", "tailwind"],
+    },
+    {
+      name: "Links",
+      tech: ["react", "tailwind"],
+    },
+  ]);
   const {
     register,
     handleSubmit,
@@ -34,14 +61,14 @@ export default function Home() {
         <div className="order-2 md:order-1 md:w-1/2 md:flex place-items-center flex-col">
           <div className="md:-mt-16">
             <div className="mt-4">
-              <h1 className="animate-">HI THERE👋, I’M</h1>
+              <h1 className="animate-">HI THERE👋, I&apos;AM</h1>
               <h1 className="text-5xl font-bold bg-gradient-to-tl from-pink-500 via-blue-400 to-indigo-400 bg-clip-text text-transparent inline">
                 DHONI.
               </h1>
             </div>
             <p className="uppercase text-pink-400">Web Developer</p>
             <p className="text-sm mt-2 text-gray-300">
-              I&apos; am full stack web developer, basic skills PHP, Javascript.{" "}
+              I&apos;am full stack web developer, basic skills PHP, Javascript.{" "}
               <br /> based in Yogyakarta, Indonesia.
             </p>
             <div className="mt-7">
@@ -59,11 +86,11 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="order-1 md:order-2 my-10 md:w-1/2 flex justify-center place-items-center">
+        <div className="order-1 md:order-2 md:w-1/2 flex justify-center place-items-center">
           <img
-            className="-mt-20"
+            className="object-fill"
             draggable="false"
-            width="700"
+            width="400"
             src={Box.src}
             alt="cube"
           />
@@ -75,35 +102,25 @@ export default function Home() {
           <h1 className="text-4xl">Stuff I’ve Worked On 📁</h1>
         </div>
         <div className="grid md:grid-cols-3 gap-5">
-          <div className="group relative inline-flex bg-gray-800 focus:outline-none">
-            <div
-              role="button"
-              className="absolute inset-0 flex justify-between flex-col p-6 text-white text-center font-medium h-80 bg-gradient-to-bl from-pink-500 to-blue-500 transform transition-transform group-hover:-translate-y-2 group-hover:-translate-x-2 group-focus:-translate-y-1 group-focus:-translate-x-1"
-            >
-              <div className="flex-1 flex place-items-center">
-                <div className="mt-24">
-                  <h1 className="text-4xl font-semibold">Links</h1>
+          {projects.map((p, i) => {
+            return (
+                <div role="button" key={i} className="flex justify-between flex-col h-80 hover:bg-gradient-to-tr hover:border-0 border from-pink-500 to-blue-500 p-5">
+                  <div className="flex-1 flex place-items-center">
+                    <div className="mt-24">
+                      <h1 className="text-4xl font-semibold">{p.name}</h1>
+                    </div>
+                  </div>
+                  <div className="flex justify-center uppercase">
+                    {p.tech.map((t, idx)=><p key={idx} className="mx-1 text-sm">{t}</p>)}
+                  </div>
                 </div>
-              </div>
-              <div className="flex justify-center">
-                <p className="mx-1">REACT</p>
-                <p className="mx-1">TAILWIND</p>
-              </div>
-            </div>
-          </div>
-          <div className="h-80 bg-gradient-to-bl from-pink-500 to-blue-500"></div>
-          <div className="h-80 bg-gradient-to-bl from-pink-500 to-blue-500"></div>
-          <div className="h-80 bg-gradient-to-bl from-pink-500 to-blue-500"></div>
-          <div className="h-80 bg-gradient-to-bl from-pink-500 to-blue-500"></div>
-          <div className="h-80 bg-gradient-to-bl from-pink-500 to-blue-500"></div>
-          <div className="h-80 bg-gradient-to-bl from-pink-500 to-blue-500"></div>
-          <div className="h-80 bg-gradient-to-bl from-pink-500 to-blue-500"></div>
-          <div className="h-80 bg-gradient-to-bl from-pink-500 to-blue-500"></div>
+            );
+          })}
         </div>
       </section>
       <section className="bg-black text-white px-5 md:px-20 py-16">
         <div className="flex flex-col md:flex-row place-content-center md:justify-around">
-          <div className="w-1/4 flex justify-center place-items-center">
+          <div className="w-1/4 my-3 flex justify-center place-items-center">
             <img draggable="false" src={Cube.src} alt="" />
           </div>
           <div>
@@ -185,7 +202,7 @@ export default function Home() {
                   className="group relative h-12 inline-flex w-64 border border-white sm:w-56 focus:outline-none"
                   type="submit"
                 >
-                  <span className="absolute inset-0 inline-flex items-center justify-center self-stretch px-6 text-white text-center font-medium bg-pink-600 ring-1 ring-pink-600 ring-offset-1 ring-offset-pink-600 transform transition-transform group-hover:-translate-y-2 group-hover:-translate-x-2 group-focus:-translate-y-1 group-focus:-translate-x-1">
+                  <span className="absolute inset-0 inline-flex items-center justify-center self-stretch px-6 text-white text-center font-medium bg-pink-600 ring-1 ring-pink-600 ring-offset-1 ring-offset-pink-600 transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1">
                     {isSubmitting ? "loading" : "Submit"}
                   </span>
                 </button>
