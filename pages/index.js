@@ -57,7 +57,7 @@ export default function Home() {
 
   return (
     <MainLayout>
-      <section className="bg-black place-items-center text-white h-screen--h-16 flex flex-col md:flex-row place-content-center md:justify-around px-5">
+      <section className="bg-black place-items-center text-white md:h-screen--h-16 flex flex-col md:flex-row place-content-center md:justify-around px-5">
         <div className="order-2 md:order-1 md:w-1/2 md:flex place-items-center flex-col">
           <div className="md:-mt-16">
             <div className="mt-4">
@@ -96,10 +96,10 @@ export default function Home() {
           />
         </div>
       </section>
-      <section className="bg-black text-white px-7 md:px-20 py-10">
+      <section className="bg-black text-white px-7 md:px-20 py-16">
         <div className="mb-10">
           <p className="text-sm text-gray-400 mb-2">FEATURED PROJECT</p>
-          <h1 className="text-4xl">Stuff I’ve Worked On 📁</h1>
+          <h1 className="text-3xl md:text-4xl">Stuff I’ve Worked On 📁</h1>
         </div>
         <div className="grid md:grid-cols-3 gap-5">
           {projects.map((p, i) => {
