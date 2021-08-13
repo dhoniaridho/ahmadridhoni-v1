@@ -75,7 +75,7 @@ export default function Home() {
           <h1 className="text-4xl">Stuff I’ve Worked On 📁</h1>
         </div>
         <div className="grid md:grid-cols-3 gap-5">
-          <div className="group relative inline-flex hover:border-white border-2 focus:outline-none">
+          <div className="group relative inline-flex bg-gray-800 focus:outline-none">
             <div
               role="button"
               className="absolute inset-0 flex justify-between flex-col p-6 text-white text-center font-medium h-80 bg-gradient-to-bl from-pink-500 to-blue-500 transform transition-transform group-hover:-translate-y-2 group-hover:-translate-x-2 group-focus:-translate-y-1 group-focus:-translate-x-1"
