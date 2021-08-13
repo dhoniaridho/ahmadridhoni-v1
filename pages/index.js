@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import MainLayout from "~/components/layouts/main-layout";
 import Link from "next/link";
 import Cube from "../assets/images/cube.png";
+import Box from "../assets/images/box.png";
 import { useForm } from 'react-hook-form';
 import Alert from '~/components/ui/alert';
 
@@ -26,7 +27,7 @@ export default function Home() {
   return (
     <MainLayout>
       <section className="bg-black place-items-center text-white h-screen--h-16 flex flex-col md:flex-row place-content-center md:justify-around px-5">
-        <div className="order-2 md:order-1 md:flex place-items-center flex-col">
+        <div className="order-2 md:order-1 md:w-1/2 md:flex place-items-center flex-col">
           <div className="md:-mt-16">
             <div className="mt-4">
               <h1 className="animate-">HI THERE👋, I’M</h1>
@@ -51,8 +52,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="order-1 md:order-2 my-10 flex justify-center place-items-center">
-          <img draggable="false" width="300" src={Cube.src} alt="cube" />
+        <div className="order-1 md:order-2 my-10 md:w-1/2 flex justify-center place-items-center">
+          <img className="-mt-20" draggable="false" width="700" src={Box.src} alt="cube" />
         </div>
       </section>
       <section className="bg-black text-white px-7 md:px-20 py-10">
