@@ -107,7 +107,7 @@ export default function Navigation() {
                         </li>
                         <li className="col-span-3 text-white font-semibold text-xl hover:text-gray-300">
                             <a href="http://dhoniaridho.vercel.app" target="_blank" rel="noopener noreferrer">
-                            <p className="flex place-items-center hover:translate-x-2 transform transition-transform">Resume<div className="ml-2"><HiArrowRight /></div> </p>
+                            <div className="flex place-items-center hover:translate-x-2 transform transition-transform">Resume<div className="ml-2"><HiArrowRight /></div> </div>
                             </a>
                         </li>
                     </ul>
