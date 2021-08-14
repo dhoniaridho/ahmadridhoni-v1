@@ -7,7 +7,7 @@ import { FaPhotoVideo } from 'react-icons/fa'
 export default function About() {
     return(
         <MainLayout>
-            <div className="min-h-screen text-white bg-gray-900 flex flex-col md:flex-row md:justify-between">
+            <section className="min-h-screen text-white bg-black flex flex-col md:flex-row md:justify-between">
                 <div className="w-full md:w-1/2 pointer-events-none">
                     <img alt="dhoniaridho" className="h-full object-cover" src={Me.src} />
                 </div>
@@ -24,21 +24,21 @@ export default function About() {
                     </div>
                     <div className="mx-10 mt-20 relative">
                         <h1 className="text-8xl absolute text-gray-700 opacity-80 -mt-10 font-bold">Skills</h1>
-                        <h1 className="text-4xl font-extralight relative">My Skills</h1>
+                        <h1 className="text-4xl font-extralight relative">Basic Skills</h1>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-10">
-                            <div className="w-full h-full bg-black hover:bg-indigo-800 p-5">
+                            <div className="w-full h-full bg-gray-900 hover:bg-indigo-800 p-5">
                                 <div className="h-32">
                                     <BiCodeAlt size="100px" />
                                 </div>
                                 <h1 className="text-xl">Web Development</h1>
                             </div>
-                            <div className="w-full h-full bg-black hover:bg-indigo-800 p-5">
+                            <div className="w-full h-full bg-gray-900 hover:bg-indigo-800 p-5">
                                 <div className="h-32">
                                     <SiMaterialdesign size="100px" />
                                 </div>
                                 <h1 className="text-xl">Graphic Design</h1>
                             </div>
-                            <div className="w-full h-full bg-black hover:bg-indigo-800 p-5">
+                            <div className="w-full h-full bg-gray-900 hover:bg-indigo-800 p-5">
                                 <div className="h-32">
                                     <FaPhotoVideo size="100px" />
                                 </div>
@@ -47,7 +47,10 @@ export default function About() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
+            <section>
+
+            </section>
         </MainLayout>
     )
 }
