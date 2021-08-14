@@ -5,7 +5,6 @@ import Cube from "../assets/images/cube.png";
 import Box from "../assets/images/box.png";
 import { useForm } from "react-hook-form";
 import Alert from "~/components/ui/alert";
-import { useEffect } from "react/cjs/react.production.min";
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
 
@@ -179,7 +178,7 @@ export default function Home() {
                     {errors.email && <Alert>required</Alert>}
                   </div>
                   <div className="flex flex-col my-3">
-                    <label className="text-sm mb-2" htmlFor="phone">
+                    <label className="text-sm mb-2" htmlFor="subject">
                       Subject *
                     </label>
                     <input
@@ -187,8 +186,8 @@ export default function Home() {
                         required: true,
                       })}
                       type="text"
-                      id="phone"
-                      placeholder="Your Phone Number"
+                      id="subject"
+                      placeholder="Subject"
                       className="py-2 text-black px-2 sm:w-96  focus:outline-none"
                     />
                     {errors.subject && <Alert>required</Alert>}

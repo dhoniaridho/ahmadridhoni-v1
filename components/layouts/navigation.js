@@ -39,7 +39,9 @@ export default function Navigation() {
         <nav>
             <div className="overflow-hidden bg-black px-5 text-white flex h-16 justify-between place-items-center z-40 sticky">
                 <div>
-                    <Logo />
+                    <Link href="/">
+                        <a><Logo /></a>
+                    </Link>
                 </div>
                 <div>
                     <button onClick={handleCollapse}>
