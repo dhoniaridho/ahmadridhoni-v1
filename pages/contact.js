@@ -4,7 +4,7 @@ import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
 import MainLayout from "~/components/layouts/main-layout";
 import Alert from "~/components/ui/alert";
-import Cube from "../assets/images/cube.png";
+import Ball from "../assets/images/ball.png";
 
 export default function Contact() {
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -30,13 +30,16 @@ export default function Contact() {
       };
     return (
         <MainLayout>
-            <section className="bg-black text-white px-5 md:px-20 py-16">
+            <section className="select-none bg-black text-white px-5 md:px-20 py-16">
                 <div className="flex flex-col md:flex-row place-content-center md:justify-around">
-                    <div className="w-1/4 my-3 flex justify-center place-items-center">
-                        <img draggable="false" src={Cube.src} alt="" />
+                    <div className="my-3 w-1/2 flex justify-center place-items-center">
+                        <img draggable="false" className="relative w-80 blur-2xl" src={Ball.src} alt="" />
+                        <img draggable="false" className="absolute w-44" src={Ball.src} alt="" />
                     </div>
                     <div>
                         <div className="mb-10 w-3/4 flex-1">
+                            <h1 className="text-gray-800 -ml-10 text-7xl font-bold -mb-10">CONTACT</h1>
+                            <div className="relative">
                             <p className="text-sm text-gray-400 mb-2 uppercase">
                                 Say hello world to me
                             </p>
@@ -44,6 +47,7 @@ export default function Contact() {
                                 CONTACT ME 🤙
                             </h1>
                             <div className="bg-pink-500 w-40 h-4 -mt-4"></div>
+                            </div>
                         </div>
                         <div>
                             <form onSubmit={handleSubmit(onSubmit)}>
@@ -126,8 +130,9 @@ export default function Contact() {
                 </div>
             </section>
             <section className="bg-black text-white px-5 md:px-20 py-16">
-                <div>
-                    <p className="text-sm text-gray-400 mb-2 uppercase">
+                <h1 className="text-gray-800 text-7xl font-bold -mb-10">SOCIAL</h1>
+                <div className="relative">
+                    <p className="text-sm text-gray-400 mb-5 uppercase">
                         Consult your problems
                     </p>
                     <h1 className="text-3xl md:text-4xl whitespace-nowrap">
