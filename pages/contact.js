@@ -38,7 +38,7 @@ export default function Contact() {
                     </div>
                     <div>
                         <div className="mb-10 w-3/4 flex-1">
-                            <h1 className="opacity-40 text-gray-600 -ml-10 text-7xl font-bold -mb-10">CONTACT</h1>
+                            <h1 className="opacity-40 text-gray-600 text-7xl font-bold -mb-10">CONTACT</h1>
                             <div className="relative">
                             <p className="text-sm text-gray-400 mb-2 uppercase">
                                 Say hello world to me
