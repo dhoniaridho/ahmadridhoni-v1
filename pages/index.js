@@ -5,7 +5,6 @@ import Cube from "../assets/images/cube.png";
 import Box from "../assets/images/box.png";
 import { useForm } from "react-hook-form";
 import Alert from "~/components/ui/alert";
-import { useEffect } from "react/cjs/react.production.min";
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
 
