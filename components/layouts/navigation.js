@@ -11,6 +11,10 @@ const navigations = [
         href: '/'
     },
     {
+        name: 'about',
+        href: '/about'
+    },
+    {
         name: 'portfolio',
         href: '/portfolio'
     },

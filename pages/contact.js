@@ -38,7 +38,7 @@ export default function Contact() {
                     </div>
                     <div>
                         <div className="mb-10 w-3/4 flex-1">
-                            <h1 className="text-gray-800 -ml-10 text-7xl font-bold -mb-10">CONTACT</h1>
+                            <h1 className="opacity-40 text-gray-600 -ml-10 text-7xl font-bold -mb-10">CONTACT</h1>
                             <div className="relative">
                             <p className="text-sm text-gray-400 mb-2 uppercase">
                                 Say hello world to me
@@ -130,7 +130,7 @@ export default function Contact() {
                 </div>
             </section>
             <section className="bg-black text-white px-5 md:px-20 py-16">
-                <h1 className="text-gray-800 text-7xl font-bold -mb-10">SOCIAL</h1>
+                <h1 className="text-7xl font-bold -mb-10 opacity-40 text-gray-600">SOCIAL</h1>
                 <div className="relative">
                     <p className="text-sm text-gray-400 mb-5 uppercase">
                         Consult your problems
