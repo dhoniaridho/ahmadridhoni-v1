@@ -35,27 +35,25 @@ export default function About() {
 
   return (
     <MainLayout>
-      <section className="min-h-screen text-white bg-black flex flex-col md:flex-row md:justify-between">
+      <section className="min-h-screen text-white bg-black flex flex-col md:flex-row md:justify-between overflow-x-hidden">
         <div className="w-full md:w-1/2 pointer-events-none">
           <img alt="dhoniaridho" className="h-full object-cover" src={Me.src} />
         </div>
         <div className="w-full md:w-1/2 my-16 relative">
           <div className="px-10">
-            <h1 className="text-8xl absolute text-gray-700 opacity-50 -mt-10 font-bold whitespace-nowrap">
+            <h1 className="text-7xl md:text-8xl absolute text-gray-700 opacity-50 -mt-10 font-bold whitespace-nowrap">
               About
             </h1>
-            <h1 className="text-6xl relative">
+            <h1 className="text-5xl relative whitespace-nowrap">
               About{" "}
               <span className="bg-gradient-to-tr text-transparent bg-clip-text from-pink-600 font-semibold to-white">
                 Me
               </span>
             </h1>
             <p className="text-sm w-3/4 my-6 select-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae,
-              sed sapien, sit scelerisque enim maecenas semper. Orci magna id
-              bibendum quam eu mauris, sem morbi aliquam. Pharetra, consectetur
-              netus pharetra mi at id. Lacus nisl cras praesent lorem a id
-              facilisi.
+              I’m a Full-Stack Developer located in Yogyakarta. I have a serious
+              passion for UI effects, animations and creating intuitive, dynamic
+              user experiences.
             </p>
             <p className="text-xs text-gray-200">@dhoniaridho</p>
           </div>
@@ -87,13 +85,13 @@ export default function About() {
           </div>
         </div>
       </section>
-      <section className="bg-black text-white">
+      <section className="bg-black text-white overflow-x-hidden">
         <div className="flex flex-col md:flex-row md:justify-between px-7 md:px-20 py-16">
-          <div className="w-1/2">
+          <div className="md:w-1/2 order-2 md:order-1">
             <p className="text-sm text-gray-400 mb-2 uppercase">
-              Say hello world to me
+              Say me about technology
             </p>
-            <h1 className="text-8xl uppercase absolute text-gray-700 opacity-50 -mt-10 font-bold">
+            <h1 className="text-5xl md:text-8xl uppercase absolute text-gray-700 opacity-50 -mt-10 font-bold">
               Interests
             </h1>
             <h1 className="text-4xl relative">My Interests</h1>
@@ -109,8 +107,13 @@ export default function About() {
               ))}
             </ul>
           </div>
-          <div className="flex justify-center place-items-center">
-            <img draggable={false} className="w-1/2" src={Graph.src} alt="" />
+          <div className="flex justify-center place-items-center order-1 md:order-2 py-8">
+            <img
+              draggable={false}
+              className="w-3/4 md:w-1/2"
+              src={Graph.src}
+              alt=""
+            />
           </div>
         </div>
       </section>
@@ -118,56 +121,97 @@ export default function About() {
         <div className="flex justify-center place-items-center">
           <div className="text-center">
             <h1 className="text-4xl">What i do</h1>
-            <p className="font-light mt-10">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
-              iure dolor accusamus accusantium officia! Neque voluptatibus
-              labore voluptatum architecto, a dolorem mollitia repellendus,
-              sequi ad omnis, rerum facilis distinctio consectetur.
+            <p className="font-light text-sm mt-10">
+              I create successful responsive websites that are fast, easy to
+              use, and built with best practices. The main area of my expertise
+              is front-end development, HTML, CSS, JS, building small and medium
+              web apps, custom plugins, features, animations, and coding
+              interactive layouts.
             </p>
           </div>
         </div>
-          <ul className="grid grid-cols-5 gap-4 text-center mt-5">
-              <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
-                  <img className="h-32 object-cover pointer-events-none" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/600px-HTML5_Badge.svg.png" alt="" />
-                  <p className="mt-2">HTML</p>
-              </li>
-              <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
-                  <img className="h-32 object-cover pointer-events-none" src="https://sujanbyanjankar.com.np/wp-content/uploads/2019/01/React.js_logo-512.png" alt="" />
-                  <p className="mt-2">React JS</p>
-              </li>
-              <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
-                  <img className="h-32 object-cover pointer-events-none" src="https://w7.pngwing.com/pngs/604/592/png-transparent-css3-cascading-style-sheets-logo-html-beautify-blue-angle-text-thumbnail.png" alt="" />
-                  <p className="mt-2">CSS</p>
-              </li>
-              <li className="p-2 flex justify-center flex-col place-items-center bg-gray-900">
-                  <img className="h-32 object-cover pointer-events-none" src="https://iconape.com/wp-content/png_logo_vector/tailwind-css-logo.png" alt="" />
-                  <p className="mt-2">HTML</p>
-              </li>
-              <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
-                  <img className="h-32 object-cover pointer-events-none" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/600px-HTML5_Badge.svg.png" alt="" />
-                  <p className="mt-2">HTML</p>
-              </li>
-              <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
-                  <img className="h-32 object-cover pointer-events-none" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/600px-HTML5_Badge.svg.png" alt="" />
-                  <p className="mt-2">HTML</p>
-              </li>
-              <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
-                  <img className="h-32 object-cover pointer-events-none" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/600px-HTML5_Badge.svg.png" alt="" />
-                  <p className="mt-2">HTML</p>
-              </li>
-              <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
-                  <img className="h-32 object-cover pointer-events-none" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/600px-HTML5_Badge.svg.png" alt="" />
-                  <p className="mt-2">HTML</p>
-              </li>
-              <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
-                  <img className="h-32 object-cover pointer-events-none" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/600px-HTML5_Badge.svg.png" alt="" />
-                  <p className="mt-2">HTML</p>
-              </li>
-              <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
-                  <img className="h-32 object-cover pointer-events-none" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/600px-HTML5_Badge.svg.png" alt="" />
-                  <p className="mt-2">HTML</p>
-              </li>
-          </ul>
+        <ul className="grid md:grid-cols-5 gap-4 text-center mt-5">
+          <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
+            <img
+              className="w-24 h-24 object-scale-down pointer-events-none"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/600px-HTML5_Badge.svg.png"
+              alt="HTML"
+            />
+            <p className="mt-2">HTML</p>
+          </li>
+          <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
+            <img
+              className="w-24 h-24 object-scale-down pointer-events-none"
+              src="https://sujanbyanjankar.com.np/wp-content/uploads/2019/01/React.js_logo-512.png"
+              alt="React"
+            />
+            <p className="mt-2">React JS</p>
+          </li>
+          <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
+            <img
+              className="w-24 h-24 object-scale-down pointer-events-none"
+              src="https://i.ibb.co/MnX1tDs/c221f800-2674-11eb-9782-d802dc0e8cbb-removebg-preview.png"
+              alt="CSS"
+            />
+            <p className="mt-2">CSS</p>
+          </li>
+          <li className="p-2 flex justify-center flex-col place-items-center bg-gray-900">
+            <img
+              className="w-24 h-24 object-scale-down pointer-events-none"
+              src="https://iconape.com/wp-content/png_logo_vector/tailwind-css-logo.png"
+              alt="TW"
+            />
+            <p className="mt-2">Tailwind</p>
+          </li>
+          <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
+            <img
+              className="w-24 h-24 object-scale-down pointer-events-none"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png"
+              alt="Laravel"
+            />
+            <p className="mt-2">Laravel</p>
+          </li>
+          <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
+            <img
+              className="w-24 h-24 object-scale-down pointer-events-none"
+              src="https://decodenatura.com/static/fb8aa1bb70c9925ce1ae22dc2711b343/nextjs-logo.png"
+              alt="Next"
+            />
+            <p className="mt-2">Next JS</p>
+          </li>
+          <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
+            <img
+              className="w-24 h-24 object-scale-down pointer-events-none"
+              src="https://www.php.net/images/logos/new-php-logo.svg"
+              alt="PHP"
+            />
+            <p className="mt-2">PHP</p>
+          </li>
+          <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
+            <img
+              className="w-24 h-24 object-scale-down pointer-events-none"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png"
+              alt="JS"
+            />
+            <p className="mt-2">Javascript</p>
+          </li>
+          <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
+            <img
+              className="w-24 h-24 object-scale-down pointer-events-none"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1280px-Node.js_logo.svg.png"
+              alt="Node"
+            />
+            <p className="mt-2">Node Js</p>
+          </li>
+          <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
+            <img
+              className="w-24 h-24 object-scale-down pointer-events-none"
+              src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+              alt="Github"
+            />
+            <p className="mt-2">Github</p>
+          </li>
+        </ul>
       </section>
     </MainLayout>
   );
