@@ -10,38 +10,76 @@ import { HiMail } from "react-icons/hi";
 
 export default function Home() {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [projects, setProjects] = useState([
+  const projects = [
     {
       name: "Links",
+      href: "/",
       tech: ["react", "tailwind"],
     },
     {
       name: "Links",
+      href: "/",
       tech: ["react", "tailwind"],
     },
     {
       name: "Links",
+      href: "/",
       tech: ["react", "tailwind"],
     },
     {
       name: "Links",
+      href: "/",
       tech: ["react", "tailwind"],
     },
     {
       name: "Links",
+      href: "/",
       tech: ["react", "tailwind"],
     },
     {
       name: "Links",
+      href: "/",
       tech: ["react", "tailwind"],
     },
-  ]);
+    {
+      name: "Links",
+      href: "/",
+      tech: ["react", "tailwind"],
+    },
+    {
+      name: "Links",
+      href: "/",
+      tech: ["react", "tailwind"],
+    },
+    {
+      name: "Links",
+      href: "/",
+      tech: ["react", "tailwind"],
+    },
+    {
+      name: "Links",
+      href: "/",
+      tech: ["react", "tailwind"],
+    },
+    {
+      name: "Links",
+      href: "/",
+      tech: ["react", "tailwind"],
+    },
+    {
+      name: "Links",
+      href: "/",
+      tech: ["react", "tailwind"],
+    },
+  ];
+
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm();
+
   const onSubmit = async (data) => {
     setIsSubmitting(true);
     try {
@@ -68,7 +106,7 @@ export default function Home() {
               </h1>
             </div>
             <p className="uppercase text-pink-400">Web Developer</p>
-            <p className="text-sm mt-2 text-gray-300">
+            <p className="text-sm mt-2 text-gray-300 font-light">
               I&apos;am full stack web developer, basic skills PHP, Javascript.{" "}
               <br /> based in Yogyakarta, Indonesia.
             </p>
@@ -105,7 +143,10 @@ export default function Home() {
         <div className="grid md:grid-cols-3 gap-5">
           {projects.map((p, i) => {
             return (
-              <div
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={p.href}
                 role="button"
                 key={i}
                 className="flex justify-between flex-col h-80 hover:bg-gradient-to-tr hover:border-0 border from-pink-500 to-blue-500 p-5"
@@ -122,7 +163,7 @@ export default function Home() {
                     </p>
                   ))}
                 </div>
-              </div>
+              </a>
             );
           })}
         </div>
@@ -233,7 +274,12 @@ export default function Home() {
           <div className="bg-pink-500 w-40 h-4 -mt-4"></div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 mt-10 gap-5">
-          <a href="http://github.com/dhoniaridho" target="_blank" rel="noopener noreferrer" className="group relative h-16 inline-flex w-full border border-white focus:outline-none">
+          <a
+            href="http://github.com/dhoniaridho"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative h-16 inline-flex w-full border border-white focus:outline-none"
+          >
             <div className="absolute inset-0 p-1 flex justify-between flex-col self-stretch text-white text-center hover:bg-pink-600 hover:ring-pink-600 ring-offset-pink-600 bg-gray-900 ring-1 ring-black transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1">
               <div className="flex justify-end">
                 <FaGithub size="20px" />
@@ -241,7 +287,12 @@ export default function Home() {
               <div className="flex justify-start">Github</div>
             </div>
           </a>
-          <a href="http://instagram.com/dhoniaridho" target="_blank" rel="noopener noreferrer" className="group relative h-16 inline-flex w-full border border-white focus:outline-none">
+          <a
+            href="http://instagram.com/dhoniaridho"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative h-16 inline-flex w-full border border-white focus:outline-none"
+          >
             <div className="absolute inset-0 p-1 flex justify-between flex-col self-stretch text-white text-center hover:bg-pink-600 hover:ring-pink-600 ring-offset-pink-600 bg-gray-900 ring-1 ring-black transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1">
               <div className="flex justify-end">
                 <FaInstagram size="20px" />
@@ -249,7 +300,12 @@ export default function Home() {
               <div className="flex justify-start">Instagram</div>
             </div>
           </a>
-          <a href="http://facebook.com/dhoniaridho" target="_blank" rel="noopener noreferrer" className="group relative h-16 inline-flex w-full border border-white focus:outline-none">
+          <a
+            href="http://facebook.com/dhoniaridho"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative h-16 inline-flex w-full border border-white focus:outline-none"
+          >
             <div className="absolute inset-0 p-1 flex justify-between flex-col self-stretch text-white text-center hover:bg-pink-600 hover:ring-pink-600 bg-gray-900 ring-1 ring-black transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1">
               <div className="flex justify-end">
                 <FaFacebook size="20px" />
@@ -257,7 +313,12 @@ export default function Home() {
               <div className="flex justify-start">Facebook</div>
             </div>
           </a>
-          <a href="http://www.linkedin.com/in/ahmad-ridhoni-921a6b205" target="_blank" rel="noopener noreferrer" className="group relative h-16 inline-flex w-full border border-white focus:outline-none">
+          <a
+            href="http://www.linkedin.com/in/ahmad-ridhoni-921a6b205"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative h-16 inline-flex w-full border border-white focus:outline-none"
+          >
             <div className="absolute inset-0 p-1 flex justify-between flex-col self-stretch text-white text-center hover:bg-pink-600 hover:ring-pink-600 bg-gray-900 ring-1 ring-black transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1">
               <div className="flex justify-end">
                 <FaLinkedin size="20px" />
@@ -265,7 +326,10 @@ export default function Home() {
               <div className="flex justify-start">LinkedIn</div>
             </div>
           </a>
-          <a href="mailto:dhoniaridho@gmail.com" className="group relative h-16 inline-flex w-full border border-white focus:outline-none">
+          <a
+            href="mailto:dhoniaridho@gmail.com"
+            className="group relative h-16 inline-flex w-full border border-white focus:outline-none"
+          >
             <div className="absolute inset-0 p-1 flex justify-between flex-col self-stretch text-white text-center hover:bg-pink-600 hover:ring-pink-600 bg-gray-900 ring-1 ring-black transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1">
               <div className="flex justify-end">
                 <HiMail size="20px" />
