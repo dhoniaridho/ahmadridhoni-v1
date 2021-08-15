@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import Alert from "~/components/ui/alert";
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
+import axios from 'axios';
 
 export default function Home() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -83,13 +84,12 @@ export default function Home() {
   const onSubmit = async (data) => {
     setIsSubmitting(true);
     try {
-      setTimeout(() => {
-        alert(JSON.stringify(data));
+        axios.post('http://localhost:3000/api/contact', data)
         reset((data = ""));
         setIsSubmitting(false);
-      }, 3000);
+        alert('message has been send')
     } catch (error) {
-      alert(error);
+      alert('something went wrong');
       setIsSubmitting(false);
     }
   };
@@ -200,7 +200,7 @@ export default function Home() {
                       className="py-2 text-black px-2 sm:w-96  focus:outline-none"
                     />
                     {errors.name && (
-                      <Alert type="danger">this filled is required</Alert>
+                      <Alert type="danger">This field is required</Alert>
                     )}
                   </div>
                   <div className="flex flex-col my-3">
@@ -216,7 +216,7 @@ export default function Home() {
                       placeholder="Your Email"
                       className="py-2 text-black px-2 sm:w-96  focus:outline-none"
                     />
-                    {errors.email && <Alert>required</Alert>}
+                    {errors.email && <Alert>This field is required</Alert>}
                   </div>
                   <div className="flex flex-col my-3">
                     <label className="text-sm mb-2" htmlFor="subject">
@@ -231,7 +231,7 @@ export default function Home() {
                       placeholder="Subject"
                       className="py-2 text-black px-2 sm:w-96  focus:outline-none"
                     />
-                    {errors.subject && <Alert>required</Alert>}
+                    {errors.subject && <Alert>This field is required</Alert>}
                   </div>
                   <div className="flex flex-col my-3">
                     <label className="text-sm mb-2" htmlFor="message">
@@ -246,7 +246,7 @@ export default function Home() {
                       placeholder="Message"
                       className="py-2 text-black px-2 sm:w-96  focus:outline-none"
                     ></textarea>
-                    {errors.message && <Alert>required</Alert>}
+                    {errors.message && <Alert>This field is required</Alert>}
                   </div>
                   <p className="my-2 text-sm">We respect your privacy.</p>
                 </fieldset>
