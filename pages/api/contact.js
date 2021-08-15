@@ -21,8 +21,8 @@ export default function contact(req, res) {
           ${req.body.email}</p>`,
     };
     transporter.sendMail(mailData, function (err, info) {
-      if (err) console.log(err);
-      else console.log(info);
+      if (err) res.status(400).json(err);
+      else res.status(400).json(inf);
     });
-    res.status(200);
+    res.status.json('message has been sent')
   }

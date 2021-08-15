@@ -84,7 +84,7 @@ export default function Home() {
   const onSubmit = async (data) => {
     setIsSubmitting(true);
     try {
-        api.post('/api/contact', data)
+        await api.post('/api/contact', data)
         reset((data = ""));
         setIsSubmitting(false);
         alert('message has been send')
