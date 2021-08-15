@@ -129,10 +129,11 @@ export default function Contact() {
                   <p className="my-2 text-sm">We respect your privacy.</p>
                 </fieldset>
                 <button
-                  className="group relative h-12 inline-flex w-64 border border-white sm:w-56 focus:outline-none"
+                  disabled={isSubmitting}
+                  className="group disabled:opacity-80 relative h-12 inline-flex w-64 border border-white sm:w-56 focus:outline-none"
                   type="submit"
                 >
-                  <span className="absolute inset-0 inline-flex items-center justify-center self-stretch px-6 text-white text-center font-medium bg-pink-600 ring-1 ring-pink-600 ring-offset-1 ring-offset-pink-600 transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1">
+                  <span className="absolute inset-0 inline-flex items-center justify-center self-stretch px-6 text-white text-center font-medium disabled:opacity-60 bg-pink-600 ring-1 ring-pink-600 ring-offset-1 ring-offset-pink-600 transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1">
                     {isSubmitting ? "loading" : "Submit"}
                   </span>
                 </button>
