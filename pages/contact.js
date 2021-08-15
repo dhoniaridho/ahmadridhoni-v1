@@ -1,4 +1,4 @@
-import axios from "axios";
+import api from "config/api";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
@@ -19,7 +19,7 @@ export default function Contact() {
   const onSubmit = async (data) => {
     setIsSubmitting(true);
     try {
-      axios.post("http://localhost:3000/api/contact", data);
+      api.post("/api/contact", data);
       reset((data = ""));
       setIsSubmitting(false);
       alert("message has been send");

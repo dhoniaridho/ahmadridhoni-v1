@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 import Alert from "~/components/ui/alert";
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
-import axios from 'axios';
+import api from "config/api";
 
 export default function Home() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -84,7 +84,7 @@ export default function Home() {
   const onSubmit = async (data) => {
     setIsSubmitting(true);
     try {
-        axios.post('http://localhost:3000/api/contact', data)
+        api.post('/api/contact', data)
         reset((data = ""));
         setIsSubmitting(false);
         alert('message has been send')
