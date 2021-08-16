@@ -1,68 +1,23 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import MainLayout from "~/components/layouts/main-layout";
 
 export default function Portfolio() {
-  const projects = [
-    {
-      name: "Links",
-      href: "/",
-      tech: ["react", "tailwind"],
-    },
-    {
-      name: "Links",
-      href: "/",
-      tech: ["react", "tailwind"],
-    },
-    {
-      name: "Links",
-      href: "/",
-      tech: ["react", "tailwind"],
-    },
-    {
-      name: "Links",
-      href: "/",
-      tech: ["react", "tailwind"],
-    },
-    {
-      name: "Links",
-      href: "/",
-      tech: ["react", "tailwind"],
-    },
-    {
-      name: "Links",
-      href: "/",
-      tech: ["react", "tailwind"],
-    },
-    {
-      name: "Links",
-      href: "/",
-      tech: ["react", "tailwind"],
-    },
-    {
-      name: "Links",
-      href: "/",
-      tech: ["react", "tailwind"],
-    },
-    {
-      name: "Links",
-      href: "/",
-      tech: ["react", "tailwind"],
-    },
-    {
-      name: "Links",
-      href: "/",
-      tech: ["react", "tailwind"],
-    },
-    {
-      name: "Links",
-      href: "/",
-      tech: ["react", "tailwind"],
-    },
-    {
-      name: "Links",
-      href: "/",
-      tech: ["react", "tailwind"],
-    },
-  ];
+
+  const [projects, setprojects] = useState([]);
+
+  const fetchProject = async ()=>{
+    try {
+      const res = await axios.get('api/projects');
+      setprojects(res.data)
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(()=>{
+    fetchProject()
+  }, [])
   return (
     <MainLayout>
       <section id="project" className="bg-black text-white px-7 md:px-20 py-16">

@@ -6,6 +6,7 @@ import { HiMail } from "react-icons/hi";
 import MainLayout from "~/components/layouts/main-layout";
 import Alert from "~/components/ui/alert";
 import Ball from "../assets/images/ball.png";
+import emailjs from 'emailjs-com';
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -19,7 +20,7 @@ export default function Contact() {
   const onSubmit = async (data) => {
     setIsSubmitting(true);
     try {
-      await api.post("/api/contact", data);
+      await emailjs.send("service_0q1ymjd","template_a4mhqoa", data, 'user_CwxQFu4YJaOLU3gt8aMcw');
       reset((data = ""));
       setIsSubmitting(false);
       alert("message has been send");
@@ -37,13 +38,13 @@ export default function Contact() {
               draggable="false"
               className="relative w-80 blur-2xl"
               src={Ball.src}
-              alt=""
+              alt="ball"
             />
             <img
               draggable="false"
               className="absolute w-44"
               src={Ball.src}
-              alt=""
+              alt="ball"
             />
           </div>
           <div>

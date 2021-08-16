@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MainLayout from "~/components/layouts/main-layout";
 import Link from "next/link";
 import Cube from "../assets/images/cube.png";
@@ -7,72 +7,13 @@ import { useForm } from "react-hook-form";
 import Alert from "~/components/ui/alert";
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
-import api from "config/api";
+import emailjs from 'emailjs-com';
+import axios from "axios";
 
 export default function Home() {
+  
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const projects = [
-    {
-      name: "Links",
-      href: "/",
-      tech: ["react", "tailwind"],
-    },
-    {
-      name: "Links",
-      href: "/",
-      tech: ["react", "tailwind"],
-    },
-    {
-      name: "Links",
-      href: "/",
-      tech: ["react", "tailwind"],
-    },
-    {
-      name: "Links",
-      href: "/",
-      tech: ["react", "tailwind"],
-    },
-    {
-      name: "Links",
-      href: "/",
-      tech: ["react", "tailwind"],
-    },
-    {
-      name: "Links",
-      href: "/",
-      tech: ["react", "tailwind"],
-    },
-    {
-      name: "Links",
-      href: "/",
-      tech: ["react", "tailwind"],
-    },
-    {
-      name: "Links",
-      href: "/",
-      tech: ["react", "tailwind"],
-    },
-    {
-      name: "Links",
-      href: "/",
-      tech: ["react", "tailwind"],
-    },
-    {
-      name: "Links",
-      href: "/",
-      tech: ["react", "tailwind"],
-    },
-    {
-      name: "Links",
-      href: "/",
-      tech: ["react", "tailwind"],
-    },
-    {
-      name: "Links",
-      href: "/",
-      tech: ["react", "tailwind"],
-    },
-  ];
+  const [projects, setprojects] = useState([]);
 
   const {
     register,
@@ -81,15 +22,28 @@ export default function Home() {
     formState: { errors },
   } = useForm();
 
+  const fetchProject = async ()=>{
+    try {
+      const res = await axios.get('api/projects');
+      setprojects(res.data)
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(()=>{
+    fetchProject()
+  }, [])
+
   const onSubmit = async (data) => {
     setIsSubmitting(true);
     try {
-        await api.post('/api/contact', data)
-        reset((data = ""));
-        setIsSubmitting(false);
-        alert('message has been send')
+      await emailjs.send("service_0q1ymjd","template_a4mhqoa", data, 'user_CwxQFu4YJaOLU3gt8aMcw');
+      reset((data = ""));
+      setIsSubmitting(false);
+      alert("message has been send");
     } catch (error) {
-      alert('something went wrong');
+      alert("something went wrong");
       setIsSubmitting(false);
     }
   };

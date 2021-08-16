@@ -63,19 +63,19 @@ export default function About() {
             </h1>
             <h1 className="text-4xl relative">Basic Skills</h1>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-10">
-              <div className="w-full h-full bg-gray-900 hover:bg-indigo-800 p-5">
+              <div className="w-full h-full bg-gray-900 hover:bg-pink-500 p-5">
                 <div className="h-32">
                   <BiCodeAlt size="100px" />
                 </div>
                 <h1 className="text-xl">Web Development</h1>
               </div>
-              <div className="w-full h-full bg-gray-900 hover:bg-indigo-800 p-5">
+              <div className="w-full h-full bg-gray-900 hover:bg-pink-500 p-5">
                 <div className="h-32">
                   <SiMaterialdesign size="100px" />
                 </div>
                 <h1 className="text-xl">Graphic Design</h1>
               </div>
-              <div className="w-full h-full bg-gray-900 hover:bg-indigo-800 p-5">
+              <div className="w-full h-full bg-gray-900 hover:bg-pink-500 p-5">
                 <div className="h-32">
                   <FaPhotoVideo size="100px" />
                 </div>
