@@ -71,7 +71,7 @@ export default function Home() {
                 </a>
               </Link>
               <a
-                href="https://drive.google.com/file/d/1D1vFNxMR-RN8piUMNkm7gobULKibCOgI/view?usp=sharing"
+                href="https://drive.google.com/file/d/1qvkho3npbhPTB4r0R-j3CHU5AoGnalbj/view?usp=sharing"
                 className="select-none py-3 mx-2 text-xs px-5 rounded-full"
               >
                 DOWNLOAD RESUME
