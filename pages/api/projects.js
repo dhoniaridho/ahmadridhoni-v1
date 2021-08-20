@@ -2,9 +2,9 @@ export default function handler(req, res) {
 
     const projects = [
         {
-          name: "Links",
-          href: "/",
-          tech: ["react", "tailwind"],
+          name: "Maestro Mobil",
+          href: "http://maestromobil.vercel.app",
+          tech: ["Next JS", "tailwind", 'API'],
         },
         {
           name: "Links",
