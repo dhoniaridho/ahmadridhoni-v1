@@ -4,12 +4,12 @@ export default function handler(req, res) {
         {
           name: "Maestro Mobil",
           href: "http://maestromobil.vercel.app",
-          tech: ["Next JS", "tailwind", 'API'],
+          tech: ["Next JS", "tailwind", "React Js"],
         },
         {
-          name: "Links",
-          href: "/",
-          tech: ["react", "tailwind"],
+          name: "Travel Now",
+          href: "https://travel-now.vercel.app/",
+          tech: ["Nuxt JS", "Tailwind CSS", "Vue Js"],
         },
         {
           name: "Links",
