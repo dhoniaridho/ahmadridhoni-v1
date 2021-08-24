@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import MainLayout from "~/components/layouts/main-layout";
 import Link from "next/link";
@@ -15,9 +16,10 @@ export default function Home() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isModal, setIsModal] = useState(false);
   const [isHover, setIsHover] = useState(false);
-  const [isContent, setIsContent] = useState("");
   const [projects, setprojects] = useState([]);
-  const [content, setContent] = useState("");
+  const [currentSkill, setcurrentSkill] = useState(0);
+
+  const skills = ['Designer', 'Web Developer', 'Motion Designer']
 
   const {
     register,
@@ -37,7 +39,15 @@ export default function Home() {
 
   useEffect(() => {
     fetchProject();
-  }, []);
+	const loop = setInterval(()=>{
+		if(currentSkill === skills.length-1) {
+			setcurrentSkill(0)
+		}else {
+			setcurrentSkill(currentSkill + 1)
+		}
+    }, 3000)
+	return () => clearInterval(loop)
+  }, [currentSkill]);
 
   const onSubmit = async (data) => {
     setIsSubmitting(true);
@@ -68,12 +78,12 @@ export default function Home() {
                 DHONI.
               </h1>
             </div>
-            <p className="uppercase text-pink-400">Web Developer</p>
+            <p className="uppercase text-pink-400">{skills[currentSkill]}</p>
             <p className="text-sm mt-2 text-gray-300 font-light">
               I&apos;am full stack web developer, basic skills PHP, Javascript.{" "}
               <br /> based in Yogyakarta, Indonesia.
             </p>
-            <div className="mt-7">
+            <div className="mt-7 flex flex-wrap">
               <Link href="/contact">
                 <a className="whitespace-nowrap select-none py-3 text-xs px-7 rounded-full bg-pink-500 hover:bg-transparent hover:border-white border-2 border-transparent">
                   CONTACT ME
@@ -81,7 +91,7 @@ export default function Home() {
               </Link>
               <a
                 href="https://drive.google.com/file/d/1qvkho3npbhPTB4r0R-j3CHU5AoGnalbj/view?usp=sharing"
-                className="select-none py-3 mx-2 text-xs px-5 rounded-full"
+                className="select-none py-3 mx-4 text-xs rounded-full whitespace-nowrap"
               >
                 DOWNLOAD RESUME
               </a>
@@ -106,16 +116,15 @@ export default function Home() {
         <div className="grid md:grid-cols-3 gap-5">
           {projects.slice(0, 6).map((p, i) => {
             return (
-              <>
+              <React.Fragment key={i}>
                 <div
-                  key={i}
                   onMouseOver={() => setIsHover({ [i]: true })}
                   onMouseLeave={() => setIsHover({ [i]: false })}
                   role="button"
                   onClick={() => {
                     setIsModal({ [i]: true });
                   }}
-                  className={`flex justify-between flex-col h-80 p-5 ${
+                  className={`flex justify-between flex-col h-80 p-5 transition-all ${
                     isHover[i]
                       ? "bg-black border"
                       : "bg-gradient-to-tr from-pink-500 to-blue-500 border"
@@ -126,9 +135,9 @@ export default function Home() {
                       <h1 className="text-4xl font-semibold">{p.name}</h1>
                     </div>
                   </div>
-                  <div className="flex justify-center uppercase">
+                  <div className="flex justify-center uppercase flex-wrap">
                     {p.tech.map((t, idx) => (
-                      <p key={idx} className="mx-1 text-sm">
+                      <p key={idx} className="mx-1 text-sm whitespace-nowrap">
                         {t}
                       </p>
                     ))}
@@ -156,7 +165,7 @@ export default function Home() {
                           <HiOutlineX size="30px" />
                         </button>
                       </div>
-                      <div className="flex-1 md:px-10">
+                      <div className="flex-1 md:px-10 md:flex place-items-start">
                         <div className="p-2 bg-gray-100 w-3/4 md:w-1/2 shadow-md mx-auto hover:shadow-xl">
                                 <a href={p.link} target="_blank" rel="noopener noreferrer">
                                 <img
@@ -167,9 +176,10 @@ export default function Home() {
                           />
                                 </a>
                         </div>
-                        <div className="mt-3 px-5">
+                        <div className="mt-3 md:mt-0 px-5">
                           <h1 className="text-xl md:text-4xl font-semibold">{p.name}</h1>
-                          <ul className="flex mt-1">
+						  <a className="text-sm" href={p.link} target="_blank" rel="noopener noreferrer">{p.link}</a>
+                          <ul className="flex mt-3">
                             {p.tech.map((t, i) => {
                               return (
                                 <li className="mr-1" key={i}>
@@ -180,9 +190,12 @@ export default function Home() {
                               );
                             })}
                           </ul>
+						  <div className="mt-2">
+								<p className="text-sm font-light">{p.description}</p>
+						  </div>
                           <div className="flex mt-3">
                             <a className="hover:text-pink-600" href={p.code} target="_blank" rel="noopener noreferrer">
-                              <FaGithub size="20px" />
+                              <FaGithub size="25px" />
                             </a>
                           </div>
                         </div>
@@ -195,7 +208,7 @@ export default function Home() {
                     }`}
                   ></div>
                 </div>
-              </>
+              </React.Fragment>
             );
           })}
         </div>
