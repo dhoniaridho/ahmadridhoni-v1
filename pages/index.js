@@ -1,32 +1,23 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import MainLayout from "~/components/layouts/main-layout";
+import Badge from "~/components/ui/badge";
+import FormSubmission from "~/components/section/FormSubmission";
+import ProjectCard from "~/components/section/ProjectCard";
 import Link from "next/link";
 import Cube from "../assets/images/cube.png";
 import Box from "../assets/images/box.png";
-import { useForm } from "react-hook-form";
-import Alert from "~/components/ui/alert";
-import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { HiMail, HiOutlineX } from "react-icons/hi";
-import emailjs from "emailjs-com";
 import axios from "axios";
-import Badge from "~/components/ui/badge";
+import SocialMedia from "~/components/section/SocialMedia";
+import { FaGithub } from "react-icons/fa";
+import { HiOutlineX } from "react-icons/hi";
 
 export default function Home() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isModal, setIsModal] = useState(false);
-  const [isHover, setIsHover] = useState(false);
   const [projects, setprojects] = useState([]);
   const [currentSkill, setcurrentSkill] = useState(0);
 
-  const skills = ['Designer', 'Web Developer', 'Motion Designer']
-
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm();
+  const skills = ["Designer", "Web Developer", "Motion Designer"];
 
   const fetchProject = async () => {
     try {
@@ -39,33 +30,15 @@ export default function Home() {
 
   useEffect(() => {
     fetchProject();
-	const loop = setInterval(()=>{
-		if(currentSkill === skills.length-1) {
-			setcurrentSkill(0)
-		}else {
-			setcurrentSkill(currentSkill + 1)
-		}
-    }, 3000)
-	return () => clearInterval(loop)
+    const loop = setInterval(() => {
+      if (currentSkill === skills.length - 1) {
+        setcurrentSkill(0);
+      } else {
+        setcurrentSkill(currentSkill + 1);
+      }
+    }, 3000);
+    return () => clearInterval(loop);
   }, [currentSkill]);
-
-  const onSubmit = async (data) => {
-    setIsSubmitting(true);
-    try {
-      await emailjs.send(
-        "service_0q1ymjd",
-        "template_a4mhqoa",
-        data,
-        "user_CwxQFu4YJaOLU3gt8aMcw"
-      );
-      reset((data = ""));
-      setIsSubmitting(false);
-      alert("message has been send");
-    } catch (error) {
-      alert("something went wrong");
-      setIsSubmitting(false);
-    }
-  };
 
   return (
     <MainLayout>
@@ -117,32 +90,18 @@ export default function Home() {
           {projects.slice(0, 6).map((p, i) => {
             return (
               <React.Fragment key={i}>
-                <div
-                  onMouseOver={() => setIsHover({ [i]: true })}
-                  onMouseLeave={() => setIsHover({ [i]: false })}
-                  role="button"
+                <ProjectCard
+                  title={p.name}
                   onClick={() => {
                     setIsModal({ [i]: true });
                   }}
-                  className={`flex justify-between flex-col h-80 p-5 transition-all ${
-                    isHover[i]
-                      ? "bg-black border"
-                      : "bg-gradient-to-tr from-pink-500 to-blue-500 border"
-                  }`}
                 >
-                  <div className="flex-1 flex place-items-center">
-                    <div className="mt-24">
-                      <h1 className="text-4xl font-semibold">{p.name}</h1>
-                    </div>
-                  </div>
-                  <div className="flex justify-center uppercase flex-wrap">
-                    {p.tech.map((t, idx) => (
-                      <p key={idx} className="mx-1 text-sm whitespace-nowrap">
-                        {t}
-                      </p>
-                    ))}
-                  </div>
-                </div>
+                  {p.tech.map((t, idx) => (
+                    <p key={idx} className="mx-1 text-sm whitespace-nowrap">
+                      {t}
+                    </p>
+                  ))}
+                </ProjectCard>
                 <div
                   className={`fixed w-full inset-0 h-screen bg-transparent z-50 flex justify-center place-items-center transform transition ${
                     isModal[i] ? "scale-100 opacity-100" : "scale-0 opacity-0"
@@ -167,18 +126,31 @@ export default function Home() {
                       </div>
                       <div className="flex-1 md:px-10 md:flex place-items-start">
                         <div className="p-2 bg-gray-100 w-3/4 md:w-1/2 shadow-md mx-auto hover:shadow-xl">
-                                <a href={p.link} target="_blank" rel="noopener noreferrer">
-                                <img
-								draggable="false"
-                            className="hover:opacity-80 transition-opacity"
-                            src={p.preview}
-                            alt={p.name}
-                          />
-                                </a>
+                          <a
+                            href={p.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <img
+                              draggable="false"
+                              className="hover:opacity-80 transition-opacity"
+                              src={p.preview}
+                              alt={p.name}
+                            />
+                          </a>
                         </div>
                         <div className="mt-3 md:mt-0 px-5">
-                          <h1 className="text-xl md:text-4xl font-semibold">{p.name}</h1>
-						  <a className="text-sm" href={p.link} target="_blank" rel="noopener noreferrer">{p.link}</a>
+                          <h1 className="text-xl md:text-4xl font-semibold">
+                            {p.name}
+                          </h1>
+                          <a
+                            className="text-sm"
+                            href={p.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {p.link}
+                          </a>
                           <ul className="flex mt-3">
                             {p.tech.map((t, i) => {
                               return (
@@ -190,11 +162,18 @@ export default function Home() {
                               );
                             })}
                           </ul>
-						  <div className="mt-2">
-								<p className="text-sm font-light">{p.description}</p>
-						  </div>
+                          <div className="mt-2">
+                            <p className="text-sm font-light">
+                              {p.description}
+                            </p>
+                          </div>
                           <div className="flex mt-3">
-                            <a className="hover:text-pink-600" href={p.code} target="_blank" rel="noopener noreferrer">
+                            <a
+                              className="hover:text-pink-600"
+                              href={p.code}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
                               <FaGithub size="25px" />
                             </a>
                           </div>
@@ -229,82 +208,7 @@ export default function Home() {
               <div className="bg-pink-500 w-40 h-4 -mt-4"></div>
             </div>
             <div>
-              <form onSubmit={handleSubmit(onSubmit)}>
-                <fieldset className="mb-4">
-                  <div className="flex flex-col my-3">
-                    <label className="text-sm mb-2" htmlFor="name">
-                      Full Name *
-                    </label>
-                    <input
-                      {...register("name", {
-                        required: true,
-                      })}
-                      type="text"
-                      id="name"
-                      placeholder="Your Name"
-                      className="py-2 text-black px-2 sm:w-96  focus:outline-none"
-                    />
-                    {errors.name && (
-                      <Alert type="danger">This field is required</Alert>
-                    )}
-                  </div>
-                  <div className="flex flex-col my-3">
-                    <label className="text-sm mb-2" htmlFor="email">
-                      Email *
-                    </label>
-                    <input
-                      {...register("email", {
-                        required: true,
-                      })}
-                      type="email"
-                      id="email"
-                      placeholder="Your Email"
-                      className="py-2 text-black px-2 sm:w-96  focus:outline-none"
-                    />
-                    {errors.email && <Alert>This field is required</Alert>}
-                  </div>
-                  <div className="flex flex-col my-3">
-                    <label className="text-sm mb-2" htmlFor="subject">
-                      Subject *
-                    </label>
-                    <input
-                      {...register("subject", {
-                        required: true,
-                      })}
-                      type="text"
-                      id="subject"
-                      placeholder="Subject"
-                      className="py-2 text-black px-2 sm:w-96  focus:outline-none"
-                    />
-                    {errors.subject && <Alert>This field is required</Alert>}
-                  </div>
-                  <div className="flex flex-col my-3">
-                    <label className="text-sm mb-2" htmlFor="message">
-                      Message *
-                    </label>
-                    <textarea
-                      {...register("message", {
-                        required: true,
-                      })}
-                      type="text"
-                      id="message"
-                      placeholder="Message"
-                      className="py-2 text-black px-2 sm:w-96  focus:outline-none"
-                    ></textarea>
-                    {errors.message && <Alert>This field is required</Alert>}
-                  </div>
-                  <p className="my-2 text-sm">We respect your privacy.</p>
-                </fieldset>
-                <button
-                  disabled={isSubmitting}
-                  className="group relative disabled:opacity-80 h-12 inline-flex w-64 border border-white sm:w-56 focus:outline-none"
-                  type="submit"
-                >
-                  <span className="absolute inset-0 inline-flex items-center justify-center self-stretch px-6 text-white text-center font-medium bg-pink-600 ring-1 ring-pink-600 ring-offset-1 ring-offset-pink-600 transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1">
-                    {isSubmitting ? "loading" : "Submit"}
-                  </span>
-                </button>
-              </form>
+              <FormSubmission />
             </div>
           </div>
         </div>
@@ -319,71 +223,7 @@ export default function Home() {
           </h1>
           <div className="bg-pink-500 w-40 h-4 -mt-4"></div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 mt-10 gap-5">
-          <a
-            href="http://github.com/dhoniaridho"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative h-16 inline-flex w-full border border-white focus:outline-none"
-          >
-            <div className="absolute inset-0 p-1 flex justify-between flex-col self-stretch text-white text-center hover:bg-pink-600 hover:ring-pink-600 ring-offset-pink-600 bg-gray-900 ring-1 ring-black transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1">
-              <div className="flex justify-end">
-                <FaGithub size="20px" />
-              </div>
-              <div className="flex justify-start">Github</div>
-            </div>
-          </a>
-          <a
-            href="http://instagram.com/dhoniaridho"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative h-16 inline-flex w-full border border-white focus:outline-none"
-          >
-            <div className="absolute inset-0 p-1 flex justify-between flex-col self-stretch text-white text-center hover:bg-pink-600 hover:ring-pink-600 ring-offset-pink-600 bg-gray-900 ring-1 ring-black transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1">
-              <div className="flex justify-end">
-                <FaInstagram size="20px" />
-              </div>
-              <div className="flex justify-start">Instagram</div>
-            </div>
-          </a>
-          <a
-            href="http://facebook.com/dhoniaridho"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative h-16 inline-flex w-full border border-white focus:outline-none"
-          >
-            <div className="absolute inset-0 p-1 flex justify-between flex-col self-stretch text-white text-center hover:bg-pink-600 hover:ring-pink-600 bg-gray-900 ring-1 ring-black transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1">
-              <div className="flex justify-end">
-                <FaFacebook size="20px" />
-              </div>
-              <div className="flex justify-start">Facebook</div>
-            </div>
-          </a>
-          <a
-            href="http://www.linkedin.com/in/ahmad-ridhoni-921a6b205"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative h-16 inline-flex w-full border border-white focus:outline-none"
-          >
-            <div className="absolute inset-0 p-1 flex justify-between flex-col self-stretch text-white text-center hover:bg-pink-600 hover:ring-pink-600 bg-gray-900 ring-1 ring-black transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1">
-              <div className="flex justify-end">
-                <FaLinkedin size="20px" />
-              </div>
-              <div className="flex justify-start">LinkedIn</div>
-            </div>
-          </a>
-          <a
-            href="mailto:dhoniaridho@gmail.com"
-            className="group relative h-16 inline-flex w-full border border-white focus:outline-none"
-          >
-            <div className="absolute inset-0 p-1 flex justify-between flex-col self-stretch text-white text-center hover:bg-pink-600 hover:ring-pink-600 bg-gray-900 ring-1 ring-black transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1">
-              <div className="flex justify-end">
-                <HiMail size="20px" />
-              </div>
-              <div className="flex justify-start">dhoniaridho@gmail.com</div>
-            </div>
-          </a>
-        </div>
+        <SocialMedia />
       </section>
     </MainLayout>
   );
