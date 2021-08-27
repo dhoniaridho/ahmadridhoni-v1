@@ -4,6 +4,7 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa'
 import Link from 'next/link'
 import {useRouter} from 'next/router'
 import Logo from '~/components/brands/logo'
+import { useEffect } from 'react'
 
 const navigations = [
     {
@@ -28,7 +29,19 @@ export default function Navigation() {
 
     const { asPath } = useRouter()
     const [isCollapse, setIsCollapse] = useState(false)
+    const [isScrolled, setIsScrolled] = useState(false)
     const [isNavHover, setIsNavHover] = useState(false)
+
+    const handleScroll = ()=> {
+        if (window.scrollY > window.innerHeight) {
+            setIsScrolled(true)
+        } else {
+            setIsScrolled(false)
+        }
+    }
+    useEffect(()=> {
+        window.addEventListener('scroll', handleScroll)
+    }, [])
 
     const handleCollapse = ()=> {
         document.body.style.overflow = 'hidden'
@@ -41,7 +54,7 @@ export default function Navigation() {
 
     return(
         <nav>
-            <div className="overflow-hidden bg-black px-5 text-white flex h-16 justify-between place-items-center z-40 sticky">
+            <div className={`overflow-hidden ${isScrolled ? 'backdrop-filter backdrop-blur-lg bg-black bg-opacity-10' : ''} px-5 text-white flex h-16 justify-between place-items-center z-40 w-full fixed`}>
                 <div>
                     <Link href="/">
                         <a><Logo /></a>

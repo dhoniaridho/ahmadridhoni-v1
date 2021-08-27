@@ -36,6 +36,15 @@ export default function handler(req, res) {
       preview: "https://i.ibb.co/ZcBJw4t/medical.png",
       code: "https://github.com/dhoniaridho/medical-recover",
     },
+    {
+      name: "Explore Indonesia",
+      link: "https://exploreindo.vercel.app/",
+      tech: ["Reactjs", "Tailwind", "Javascript", "CRA"],
+      description:
+        "Slicing a hosting landing page with React Js as a library. designed by figma community",
+      preview: "https://i.ibb.co/Y0BzKrq/Vite-App.png",
+      code: "https://github.com/dhoniaridho/exploreindo",
+    },
   ];
 
   if (req.method === "GET") {
