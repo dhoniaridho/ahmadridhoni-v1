@@ -42,7 +42,8 @@ export default function Home() {
 
   return (
     <MainLayout>
-      <section className="bg-black place-items-center text-white md:h-screen--h-16 flex flex-col md:flex-row place-content-center md:justify-around px-5">
+      <main className="bg-opacity-50 bg-black">
+      <section className="place-items-center text-white md:h-screen--h-16 flex flex-col md:flex-row place-content-center md:justify-around px-5">
         <div className="order-2 md:order-1 md:w-1/2 md:flex place-items-center flex-col">
           <div className="md:-mt-16">
             <div className="mt-4">
@@ -81,7 +82,7 @@ export default function Home() {
           />
         </div>
       </section>
-      <section id="project" className="bg-black text-white px-7 md:px-20 py-16">
+      <section id="project" className="text-white px-7 md:px-20 py-16">
         <div className="mb-10">
           <p className="text-sm text-gray-400 mb-2">FEATURED PROJECT</p>
           <h1 className="text-3xl md:text-4xl">Stuff I’ve Worked On 📁</h1>
@@ -192,7 +193,7 @@ export default function Home() {
           })}
         </div>
       </section>
-      <section className="bg-black text-white px-5 md:px-20 py-16">
+      <section className="text-white px-5 md:px-20 py-16">
         <div className="flex flex-col md:flex-row place-content-center md:justify-around">
           <div className="w-1/4 my-3 flex justify-center place-items-center">
             <img draggable="false" src={Cube.src} alt="" />
@@ -213,7 +214,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="bg-black text-white px-5 md:px-20 py-16">
+      <section className="text-white px-5 md:px-20 py-16">
         <div>
           <p className="text-sm text-gray-400 mb-2 uppercase">
             Consult your problems
@@ -225,6 +226,7 @@ export default function Home() {
         </div>
         <SocialMedia />
       </section>
+      </main>
     </MainLayout>
   );
 }
