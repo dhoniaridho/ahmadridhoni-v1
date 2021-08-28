@@ -25,7 +25,7 @@ export default function Portfolio() {
   }, []);
   return (
     <MainLayout>
-      <section id="project" className="bg-black text-white px-7 md:px-20 py-16">
+      <section id="project" className="bg-black min-h-screen text-white px-7 md:px-20 py-16">
         <div className="mb-10">
           <p className="text-sm text-gray-400 mb-2">ALL PROJECT</p>
           <h1 className="text-3xl md:text-4xl">Stuff I’ve Worked On 📁</h1>
@@ -36,6 +36,7 @@ export default function Portfolio() {
             return (
               <React.Fragment key={i}>
                 <ProjectCard
+                  title={p.name}
                   onClick={() => {
                     setIsModal({ [i]: true });
                   }}
