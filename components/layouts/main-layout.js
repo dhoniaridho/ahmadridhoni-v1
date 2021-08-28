@@ -5,12 +5,14 @@ import Navigation from "./navigation";
 export default function MainLayout(props) {
     const { children, title } = props
     return (
-        <div className="bg-gradient-to-tr from-pink-800 to-blue-600">
+        <div>
             <Head>
                 <title>{title}</title>
             </Head>
             <Navigation />
+            <main  className="bg-gradient-to-tr from-pink-800 to-blue-600">
                     {children}
+            </main>
             <Footer />
         </div>
     )

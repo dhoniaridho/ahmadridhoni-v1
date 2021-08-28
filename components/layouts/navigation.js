@@ -90,7 +90,7 @@ export default function Navigation() {
                     <p className="text-sm text-white text-center whitespace-nowrap">&copy;{new Date().getFullYear()} dhoniaridho. All Rights Reserved</p>
                 </div>
             </div>
-            <div className={`z-50 hidden md:flex transform transition-all duration-300 ${isCollapse ? 'translate-x-0' : 'translate-x-full delay-300'} fixed flex justify-between flex-col top-0 right-0 w-1/4 h-screen bg-gradient-to-br bg-gray-900 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-30 z-50 transition-all duration-300`}>
+            <div className={`z-50 hidden bg-transparent md:flex transform transition-all duration-300 ${isCollapse ? 'translate-x-0' : 'translate-x-full delay-300'} fixed flex justify-between flex-col top-0 right-0 w-1/4 h-screen bg-gradient-to-br bg-gray-900 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-30 z-50 transition-all duration-300`}>
                 <div className="h-16 flex justify-end place-items-center px-5">
                     <button className={`p-1 bg-black  text-white rounded-full transform transition-all ${isCollapse ? 'scale-100' : 'scale-0'}`} onClick={handleClose}>
                         <HiOutlineX size="30px" />

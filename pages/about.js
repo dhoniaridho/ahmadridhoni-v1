@@ -4,8 +4,12 @@ import { BiCodeAlt } from "react-icons/bi";
 import { SiMaterialdesign } from "react-icons/si";
 import { FaPhotoVideo } from "react-icons/fa";
 import Graph from "../assets/images/graph.png";
+import { useState } from "react";
 
 export default function About() {
+
+  const [selectSkill, setSelectSkill] = useState('Web Programming')
+
   const Interests = [
     {
       title: "Front End Developer",
@@ -125,93 +129,190 @@ export default function About() {
               I create successful responsive websites that are fast, easy to
               use, and built with best practices. The main area of my expertise
               is front-end development, HTML, CSS, JS, building small and medium
-              web apps, custom plugins, features, animations, and coding
+              web apps, features, animations, and coding
               interactive layouts.
             </p>
           </div>
         </div>
-        <ul className="grid md:grid-cols-5 gap-4 text-center mt-5">
-          <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
-            <img
-              className="w-24 h-24 object-scale-down pointer-events-none"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/600px-HTML5_Badge.svg.png"
-              alt="HTML"
-            />
-            <p className="mt-2">HTML</p>
-          </li>
-          <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
-            <img
-              className="w-24 h-24 object-scale-down pointer-events-none"
-              src="https://sujanbyanjankar.com.np/wp-content/uploads/2019/01/React.js_logo-512.png"
-              alt="React"
-            />
-            <p className="mt-2">React JS</p>
-          </li>
-          <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
-            <img
-              className="w-24 h-24 object-scale-down pointer-events-none"
-              src="https://i.ibb.co/MnX1tDs/c221f800-2674-11eb-9782-d802dc0e8cbb-removebg-preview.png"
-              alt="CSS"
-            />
-            <p className="mt-2">CSS</p>
-          </li>
-          <li className="p-2 flex justify-center flex-col place-items-center bg-gray-900">
-            <img
-              className="w-24 h-24 object-scale-down pointer-events-none"
-              src="https://iconape.com/wp-content/png_logo_vector/tailwind-css-logo.png"
-              alt="TW"
-            />
-            <p className="mt-2">Tailwind</p>
-          </li>
-          <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
-            <img
-              className="w-24 h-24 object-scale-down pointer-events-none"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png"
-              alt="Laravel"
-            />
-            <p className="mt-2">Laravel</p>
-          </li>
-          <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
-            <img
-              className="w-24 h-24 object-scale-down pointer-events-none"
-              src="https://decodenatura.com/static/fb8aa1bb70c9925ce1ae22dc2711b343/nextjs-logo.png"
-              alt="Next"
-            />
-            <p className="mt-2">Next JS</p>
-          </li>
-          <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
-            <img
-              className="w-24 h-24 object-scale-down pointer-events-none"
-              src="https://www.php.net/images/logos/new-php-logo.svg"
-              alt="PHP"
-            />
-            <p className="mt-2">PHP</p>
-          </li>
-          <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
-            <img
-              className="w-24 h-24 object-scale-down pointer-events-none"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png"
-              alt="JS"
-            />
-            <p className="mt-2">Javascript</p>
-          </li>
-          <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
-            <img
-              className="w-24 h-24 object-scale-down pointer-events-none"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1280px-Node.js_logo.svg.png"
-              alt="Node"
-            />
-            <p className="mt-2">Node Js</p>
-          </li>
-          <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
-            <img
-              className="w-24 h-24 object-scale-down pointer-events-none"
-              src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
-              alt="Github"
-            />
-            <p className="mt-2">Github</p>
-          </li>
-        </ul>
+        <div className="flex justify-center my-5">
+          <h1 role="button" onClick={() => setSelectSkill('Web Programming')} className={`mt-5 text-center py-2 px-7 border-b-2 ${selectSkill === 'Web Programming' ? 'border-pink-500' : 'border-gray-400'}`}>Web Programming</h1>
+          <h1 role="button" onClick={() => setSelectSkill('Graphic Design')} className={`mt-5 text-center py-2 px-7 border-b-2 ${selectSkill === 'Graphic Design' ? 'border-pink-500' : 'border-gray-400'}`}>Graphic Design</h1>
+        </div>
+        {selectSkill === 'Web Programming' ?
+          <ul className="grid md:grid-cols-5 gap-4 text-center mt-5">
+            <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
+              <img
+                className="w-24 h-24 object-scale-down pointer-events-none"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/600px-HTML5_Badge.svg.png"
+                alt="HTML"
+              />
+              <p className="mt-2">HTML</p>
+            </li>
+            <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
+              <img
+                className="w-24 h-24 object-scale-down pointer-events-none"
+                src="https://sujanbyanjankar.com.np/wp-content/uploads/2019/01/React.js_logo-512.png"
+                alt="React"
+              />
+              <p className="mt-2">React JS</p>
+            </li>
+            <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
+              <img
+                className="w-24 h-24 object-scale-down pointer-events-none"
+                src="https://i.ibb.co/MnX1tDs/c221f800-2674-11eb-9782-d802dc0e8cbb-removebg-preview.png"
+                alt="CSS"
+              />
+              <p className="mt-2">CSS</p>
+            </li>
+            <li className="p-2 flex justify-center flex-col place-items-center bg-gray-900">
+              <img
+                className="w-24 h-24 object-scale-down pointer-events-none"
+                src="https://iconape.com/wp-content/png_logo_vector/tailwind-css-logo.png"
+                alt="TW"
+              />
+              <p className="mt-2">Tailwind</p>
+            </li>
+            <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
+              <img
+                className="w-24 h-24 object-scale-down pointer-events-none"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png"
+                alt="Laravel"
+              />
+              <p className="mt-2">Laravel</p>
+            </li>
+            <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
+              <img
+                className="w-24 h-24 object-scale-down pointer-events-none"
+                src="https://decodenatura.com/static/fb8aa1bb70c9925ce1ae22dc2711b343/nextjs-logo.png"
+                alt="Next"
+              />
+              <p className="mt-2">Next JS</p>
+            </li>
+            <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
+              <img
+                className="w-24 h-24 object-scale-down pointer-events-none"
+                src="https://www.php.net/images/logos/new-php-logo.svg"
+                alt="PHP"
+              />
+              <p className="mt-2">PHP</p>
+            </li>
+            <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
+              <img
+                className="w-24 h-24 object-scale-down pointer-events-none"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png"
+                alt="JS"
+              />
+              <p className="mt-2">Javascript</p>
+            </li>
+            <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
+              <img
+                className="w-24 h-24 object-scale-down pointer-events-none"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1280px-Node.js_logo.svg.png"
+                alt="Node"
+              />
+              <p className="mt-2">Node Js</p>
+            </li>
+            <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
+              <img
+                className="w-24 h-24 object-scale-down pointer-events-none"
+                src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                alt="Github"
+              />
+              <p className="mt-2">Github</p>
+            </li>
+            <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
+              <img
+                className="w-24 h-24 object-scale-down pointer-events-none"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1184px-Vue.js_Logo_2.svg.png"
+                alt="Vue"
+              />
+              <p className="mt-2">Vue</p>
+            </li>
+            <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
+              <img
+                className="w-24 h-24 object-scale-down pointer-events-none"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/1200px-Bootstrap_logo.svg.png"
+                alt="Bootstrap"
+              />
+              <p className="mt-2">Bootstrap</p>
+            </li>
+            <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
+              <img
+                className="w-24 h-24 object-scale-down pointer-events-none"
+                src="https://raw.githubusercontent.com/emotion-js/emotion/main/emotion.png"
+                alt="Bootstrap"
+              />
+              <p className="mt-2">Emotion JS</p>
+            </li>
+            <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
+              <img
+                className="w-24 h-24 object-scale-down pointer-events-none"
+                src="https://avatars.githubusercontent.com/u/13810373?s=280&v=4"
+                alt="Bootstrap"
+              />
+              <p className="mt-2">Adonis JS</p>
+            </li>
+            <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
+              <img
+                className="w-24 h-24 object-scale-down pointer-events-none"
+                src="https://i.ibb.co/8zhq3cZ/rzyl-Ujaf-400x400-removebg-preview.png"
+                alt="Bootstrap"
+              />
+              <p className="mt-2">Chakra UI</p>
+            </li>
+          </ul>
+          :
+          <ul className="grid md:grid-cols-5 gap-4 text-center mt-5">
+            <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
+              <img
+                className="w-24 h-24 object-scale-down pointer-events-none"
+                src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Adobe_After_Effects_CC_icon.svg"
+                alt="AE"
+              />
+              <p className="mt-2">After Effect</p>
+            </li>
+            <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
+              <img
+                className="w-24 h-24 object-scale-down pointer-events-none"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Adobe_Premiere_Pro_CC_icon.svg/616px-Adobe_Premiere_Pro_CC_icon.svg.png"
+                alt="React"
+              />
+              <p className="mt-2">Premiere Pro</p>
+            </li>
+            <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
+              <img
+                className="w-24 h-24 object-scale-down pointer-events-none"
+                src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg"
+                alt="PR"
+              />
+              <p className="mt-2">Photoshop</p>
+            </li>
+            <li className="p-2 flex justify-center flex-col place-items-center bg-gray-900">
+              <img
+                className="w-24 h-24 object-scale-down pointer-events-none"
+                src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg"
+                alt="TW"
+              />
+              <p className="mt-2">Figma</p>
+            </li>
+            <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
+              <img
+                className="w-24 h-24 object-scale-down pointer-events-none"
+                src="https://cdn.freelogovectors.net/wp-content/uploads/2021/01/coreldraw-logo-freelogovectors.net_.png"
+                alt="Laravel"
+              />
+              <p className="mt-2">Corel Draw</p>
+            </li>
+            <li className="p-5 flex justify-center flex-col place-items-center bg-gray-900">
+              <img
+                className="w-24 h-24 object-scale-down pointer-events-none"
+                src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg"
+                alt="Next"
+              />
+              <p className="mt-2">Illustrator</p>
+            </li>
+          </ul>
+        }
       </section>
     </MainLayout>
   );
