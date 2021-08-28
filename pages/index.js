@@ -42,7 +42,7 @@ export default function Home() {
 
   return (
     <MainLayout>
-      <main className="bg-opacity-50 bg-black">
+      <main className="bg-opacity-70 bg-black">
       <section className="place-items-center text-white md:h-screen--h-16 flex flex-col md:flex-row place-content-center md:justify-around px-5">
         <div className="order-2 md:order-1 md:w-1/2 md:flex place-items-center flex-col">
           <div className="md:-mt-16">
