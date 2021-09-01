@@ -5,6 +5,8 @@ export default function SocialMedia() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 mt-10 gap-5">
       <a
+      data-aos="zoom-in"
+      data-aos-delay="10"
         href="http://github.com/dhoniaridho"
         target="_blank"
         rel="noopener noreferrer"
@@ -18,6 +20,8 @@ export default function SocialMedia() {
         </div>
       </a>
       <a
+      data-aos="zoom-in"
+      data-aos-delay="20"
         href="http://instagram.com/dhoniaridho"
         target="_blank"
         rel="noopener noreferrer"
@@ -31,6 +35,8 @@ export default function SocialMedia() {
         </div>
       </a>
       <a
+      data-aos="zoom-in"
+      data-aos-delay="25"
         href="http://facebook.com/dhoniaridho"
         target="_blank"
         rel="noopener noreferrer"
@@ -44,6 +50,8 @@ export default function SocialMedia() {
         </div>
       </a>
       <a
+      data-aos="zoom-in"
+      data-aos-delay="30"
         href="http://www.linkedin.com/in/ahmad-ridhoni-921a6b205"
         target="_blank"
         rel="noopener noreferrer"
@@ -57,6 +65,8 @@ export default function SocialMedia() {
         </div>
       </a>
       <a
+      data-aos="zoom-in"
+      data-aos-delay="40"
         href="mailto:dhoniaridho@gmail.com"
         className="group relative h-16 inline-flex w-full border border-white focus:outline-none"
       >

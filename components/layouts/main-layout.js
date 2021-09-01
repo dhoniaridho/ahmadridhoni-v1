@@ -3,20 +3,20 @@ import Footer from "./footer";
 import Navigation from "./navigation";
 
 export default function MainLayout(props) {
-    const { children, title } = props
-    return (
-        <div>
-            <Head>
-                <title>{title}</title>
-            </Head>
-            <Navigation />
-            <main  className="bg-gradient-to-tr from-pink-800 to-blue-600">
-                    {children}
-            </main>
-            <Footer />
-        </div>
-    )
+  const { children, title } = props;
+  return (
+    <div>
+      <Head>
+        <title>{title}</title>
+      </Head>
+      <Navigation />
+      <main className="bg-gradient-to-tr from-pink-800 to-blue-600">
+        {children}
+      </main>
+      <Footer />
+    </div>
+  );
 }
 MainLayout.defaultProps = {
-    title: 'Ahmad Ridhoni'
-}
+  title: "Ahmad Ridhoni",
+};

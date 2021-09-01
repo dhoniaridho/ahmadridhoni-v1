@@ -1,7 +1,9 @@
-export default function PorjectCard({title, children, onClick}) {
+export default function PorjectCard(props) {
+  const {title, children, onClick} = props
   return (
     <div
-      onClick={onClick}aas
+     {...props}
+      onClick={onClick}
       role="button"
       className={`flex justify-between flex-col h-80 p-5 transition-all bg-gradient-to-tr from-pink-400 via-indigo-500 to-blue-400`}
     >
