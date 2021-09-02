@@ -10,7 +10,7 @@ export default function MainLayout(props) {
                 <title>{title}</title>
             </Head>
             <Navigation />
-            <main  className="bg-gradient-to-tr from-pink-800 to-blue-600">
+            <main className="bg-gradient-to-tr overflow-x-hidden from-pink-800 to-blue-600">
                     {children}
             </main>
             <Footer />
