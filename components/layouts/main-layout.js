@@ -18,5 +18,5 @@ export default function MainLayout(props) {
     )
 }
 MainLayout.defaultProps = {
-    title: 'Ahmad Ridhoni'
-}
+  title: "Ahmad Ridhoni",
+};

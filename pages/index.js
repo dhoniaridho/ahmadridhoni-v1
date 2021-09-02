@@ -11,6 +11,8 @@ import axios from "axios";
 import SocialMedia from "~/components/section/SocialMedia";
 import { FaGithub } from "react-icons/fa";
 import { HiOutlineX } from "react-icons/hi";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 export default function Home() {
   const [isModal, setIsModal] = useState(false);
@@ -29,6 +31,10 @@ export default function Home() {
   };
 
   useEffect(() => {
+    AOS.init({
+      duration : 1000
+    })
+    AOS.refresh();
     fetchProject();
     const loop = setInterval(() => {
       if (currentSkill === skills.length - 1) {
@@ -45,14 +51,14 @@ export default function Home() {
       <main className="bg-opacity-80 bg-black">
       <section className="place-items-center text-white md:h-screen--h-16 flex flex-col md:flex-row place-content-center md:justify-around px-5">
         <div className="order-2 md:order-1 md:w-1/2 md:flex place-items-center flex-col">
-          <div className="md:-mt-16">
+          <div data-aos="fade-right" className="md:-mt-16">
             <div className="mt-4">
-              <h1 className="animate-">HI THERE👋, I&apos;AM</h1>
-              <h1 className="text-5xl font-bold bg-gradient-to-tl from-pink-500 via-blue-400 to-indigo-400 bg-clip-text text-transparent inline">
+              <h1 data-aos="fade-right" className="animate-">HI THERE👋, I&apos;AM</h1>
+              <h1 data-aos="fade-right" className="text-5xl font-bold bg-gradient-to-tl from-pink-500 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
                 DHONI.
               </h1>
             </div>
-            <p className="uppercase text-pink-400">{skills[currentSkill]}</p>
+            <p data-aos="fade-right" className="uppercase text-pink-400">{skills[currentSkill]}</p>
             <p className="text-sm mt-2 text-gray-300 font-light">
               I&apos;am full stack web developer, basic skills PHP, Javascript.{" "}
               <br /> based in Yogyakarta, Indonesia.
@@ -83,7 +89,7 @@ export default function Home() {
         </div>
       </section>
       <section id="project" className="text-white px-7 md:px-20 py-16">
-        <div className="mb-10">
+        <div data-aos="fade-right" className="mb-10">
           <p className="text-sm text-gray-400 mb-2">FEATURED PROJECT</p>
           <h1 className="text-3xl md:text-4xl">Stuff I’ve Worked On 📁</h1>
         </div>
@@ -92,6 +98,8 @@ export default function Home() {
             return (
               <React.Fragment key={i}>
                 <ProjectCard
+                  data-aos-delay={i+99}
+                  data-aos="zoom-in"
                   title={p.name}
                   onClick={() => {
                     setIsModal({ [i]: true });
@@ -195,18 +203,18 @@ export default function Home() {
       </section>
       <section className="text-white px-5 md:px-20 py-16">
         <div className="flex flex-col md:flex-row place-content-center md:justify-around">
-          <div className="w-1/4 my-3 flex justify-center place-items-center">
+          <div data-aos="fade-right" className="w-1/4 my-3 flex justify-center place-items-center">
             <img draggable="false" src={Cube.src} alt="" />
           </div>
-          <div>
-            <div className="mb-10 w-3/4 flex-1">
-              <p className="text-sm text-gray-400 mb-2 uppercase">
+          <div data-aos="fade-left">
+            <div className="mb-10 w-3/4 flex-1" data-aos="fade-left">
+              <p data-aos="fade-left" className="text-sm text-gray-400 mb-2 uppercase">
                 Say hello world to me
               </p>
-              <h1 className="text-3xl md:text-4xl whitespace-nowrap">
+              <h1 className="text-3xl md:text-4xl whitespace-nowrap relative">
                 CONTACT ME 🤙
               </h1>
-              <div className="bg-pink-500 w-40 h-4 -mt-4"></div>
+              <div className="bg-pink-500 bg-opacity-50 w-40 h-4 -mt-4 absolute"></div>
             </div>
             <div>
               <FormSubmission />
@@ -215,7 +223,7 @@ export default function Home() {
         </div>
       </section>
       <section className="text-white px-5 md:px-20 py-16">
-        <div>
+        <div data-aos="fade-right">
           <p className="text-sm text-gray-400 mb-2 uppercase">
             Consult your problems
           </p>

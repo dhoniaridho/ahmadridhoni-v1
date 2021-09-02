@@ -6,6 +6,8 @@ import { FaGithub } from "react-icons/fa";
 import { HiOutlineX } from "react-icons/hi";
 import React from "react";
 import ProjectCard from "~/components/section/ProjectCard";
+import AOS from "aos";
+import 'aos/dist/aos.css'
 
 export default function Portfolio() {
   const [projects, setprojects] = useState([]);
@@ -21,11 +23,18 @@ export default function Portfolio() {
   };
 
   useEffect(() => {
+    AOS.init({
+      duration : 1000
+    })
+    AOS.refresh();
     fetchProject();
   }, []);
   return (
     <MainLayout>
-      <section id="project" className="bg-black min-h-screen text-white px-7 md:px-20 py-16">
+      <section
+        id="project"
+        className="bg-black min-h-screen text-white px-7 md:px-20 py-16"
+      >
         <div className="mb-10">
           <p className="text-sm text-gray-400 mb-2">ALL PROJECT</p>
           <h1 className="text-3xl md:text-4xl">Stuff I’ve Worked On 📁</h1>
@@ -36,6 +45,7 @@ export default function Portfolio() {
             return (
               <React.Fragment key={i}>
                 <ProjectCard
+                  data-aos="zoom-in"
                   title={p.name}
                   onClick={() => {
                     setIsModal({ [i]: true });

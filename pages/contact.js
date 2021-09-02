@@ -38,7 +38,7 @@ export default function Contact() {
               </div>
             </div>
             <div>
-                <FormSubmission></FormSubmission>
+              <FormSubmission></FormSubmission>
             </div>
           </div>
         </div>
